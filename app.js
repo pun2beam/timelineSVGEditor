@@ -571,7 +571,9 @@ function renderSvg(layoutModel) {
       `<rect x="${band.x}" y="${band.y}" width="${band.width}" height="${band.height}" fill="${bgColor}" rx="4" />`,
     );
     svgParts.push(
-      `<text x="${band.x + 4}" y="${band.y + 14}" font-size="12" fill="${color}">${truncateText(
+      `<text x="${band.x + band.width / 2}" y="${
+        band.y + band.height / 2
+      }" font-size="12" fill="${color}" text-anchor="middle" dominant-baseline="middle" writing-mode="vertical-rl" text-orientation="upright">${truncateText(
         band.text,
       )}</text>`,
     );
