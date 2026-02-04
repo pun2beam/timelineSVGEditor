@@ -1,29 +1,29 @@
 column:
   id:1
   type:year
-  width:20pt
-  rowheight:20pt
+  width:30pt
+  rowheight:40pt
   period:1990-2026
 
 column:
   id:2
   type:base
-  width:15pt
+  width:20pt
 
 column:
   id:3
   type:base
-  width:20pt
+  width:60pt
 
 column:
   id:4
   type:base
-  width:20pt
+  width:60pt
 
 column:
   id:5
   type:base
-  width:20pt
+  width:60pt
 
 node:
   id:1
@@ -36,7 +36,7 @@ node:
   id:2
   column:4
   type:box
-  date:1990.1.1
+  date:1990
   text:自由民主党
 
 node:
