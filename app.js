@@ -463,7 +463,7 @@ function layout(model) {
       return {
         ...node,
         x: column.xCenter - width / 2,
-        y: y - height / 2,
+        y,
         width,
         height,
       };
