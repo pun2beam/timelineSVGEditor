@@ -465,6 +465,25 @@ function truncateText(text, maxLength = 18) {
   return `${text.slice(0, maxLength)}...`;
 }
 
+function wrapTextByWidth(text, maxWidth, fontSize) {
+  if (!text) return [""];
+  const widthPerChar = fontSize * 0.9;
+  const maxChars = Math.max(1, Math.floor(maxWidth / widthPerChar));
+  const lines = [];
+  let buffer = "";
+  for (const char of text) {
+    buffer += char;
+    if (buffer.length >= maxChars) {
+      lines.push(buffer);
+      buffer = "";
+    }
+  }
+  if (buffer) {
+    lines.push(buffer);
+  }
+  return lines;
+}
+
 function renderSvg(layoutModel) {
   const {
     columns,
@@ -529,14 +548,35 @@ function renderSvg(layoutModel) {
     const fontSize = node.fontSize
       ? parseNumberWithUnit(node.fontSize, 0, [], "font") || DEFAULTS.fontSize
       : DEFAULTS.fontSize;
-    svgParts.push(
-      `<rect x="${node.x}" y="${node.y}" width="${node.width}" height="${node.height}" rx="4" fill="${bgColor}" stroke="${borderColor}" />`,
-    );
-    svgParts.push(
-      `<text x="${node.x + node.width / 2}" y="${node.y + node.height / 2}" text-anchor="middle" dominant-baseline="middle" font-size="${fontSize}" fill="${
-        node.color || "#111"
-      }">${truncateText(node.text)}</text>`,
-    );
+    if (node.type === "text") {
+      const padding = node.padding
+        ? parseNumberWithUnit(node.padding, 0, [], "padding") || DEFAULTS.nodePadding
+        : DEFAULTS.nodePadding;
+      const maxTextWidth = Math.max(node.width - padding * 2, 10);
+      const lines = wrapTextByWidth(node.text, maxTextWidth, fontSize);
+      const lineHeight = fontSize * 1.2;
+      const textStartY = node.y + padding;
+      const textX = node.x + padding;
+      svgParts.push(
+        `<text x="${textX}" y="${textStartY}" text-anchor="start" dominant-baseline="hanging" font-size="${fontSize}" fill="${
+          node.color || "#111"
+        }">`,
+      );
+      lines.forEach((line, index) => {
+        const dy = index === 0 ? 0 : lineHeight;
+        svgParts.push(`<tspan x="${textX}" dy="${dy}">${line}</tspan>`);
+      });
+      svgParts.push(`</text>`);
+    } else {
+      svgParts.push(
+        `<rect x="${node.x}" y="${node.y}" width="${node.width}" height="${node.height}" rx="4" fill="${bgColor}" stroke="${borderColor}" />`,
+      );
+      svgParts.push(
+        `<text x="${node.x + node.width / 2}" y="${node.y + node.height / 2}" text-anchor="middle" dominant-baseline="middle" font-size="${fontSize}" fill="${
+          node.color || "#111"
+        }">${truncateText(node.text)}</text>`,
+      );
+    }
   });
 
   columns.forEach((column) => {
