@@ -107,7 +107,7 @@ node:
 
 ### 3.5 band ブロック（期間帯）
 
-必須：`id`, `column`, `year`, `text`
+必須：`id`, `column`, `date`, `text`
 任意：`color`, `bgcolor`
 
 例：
@@ -116,13 +116,13 @@ node:
 band:
   id:2
   column:2
-  year:1993-1994
+  date:1993-1994
   text:非自民連立
   color:#ffffff
   bgcolor:#0a00a0
 ```
 
-* `year`（bandの場合）：`YYYY-YYYY` または `YYYY.M-YYYY.M` 等の範囲（後述）
+* `date`（bandの場合）：`YYYY-YYYY` または `YYYY.M-YYYY.M` 等の範囲（後述）
 * 描画は指定期間を縦に延ばした「帯状タイル」
 
 ### 3.6 connector ブロック（接続線）
@@ -381,7 +381,7 @@ connector:
 band:
   id:1
   column:2
-  year:1990-1993
+  date:1990-1993
   text:自由民主党
   color:#ffffff
   bgcolor:#00a0a0
@@ -389,7 +389,7 @@ band:
 band:
   id:2
   column:2
-  year:1993-1994
+  date:1993-1994
   text:非自民連立
   color:#ffffff
   bgcolor:#0a00a0
