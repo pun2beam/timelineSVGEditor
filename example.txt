@@ -1,3 +1,6 @@
+defaults:
+  node.box.height:40px
+
 column:
   id:1
   type:year
@@ -13,7 +16,7 @@ column:
 column:
   id:3
   type:base
-  width:60pt
+  width:100pt
 
 column:
   id:4
@@ -39,8 +42,198 @@ node:
   id:1
   column:3
   type:text
+  date:1990.2.28
+  text:・第二次海部内閣
+
+node:
+  id:2
+  column:3
+  type:text
   date:1991.11.5
   text:・宮澤内閣
+
+node:
+  id:3
+  column:3
+  type:text
+  date:1993.8.9
+  text:・細川内閣
+
+node:
+  id:4
+  column:3
+  type:text
+  date:1994.4.28
+  text:・羽田内閣
+
+node:
+  id:5
+  column:3
+  type:text
+  date:1994.6.30
+  text:・村山内閣
+
+node:
+  id:6
+  column:3
+  type:text
+  date:1996.1.11
+  text:・第1次橋本内閣
+
+node:
+  id:7
+  column:3
+  type:text
+  date:1996.11.7
+  text:・第2次橋本内閣
+
+node:
+  id:8
+  column:3
+  type:text
+  date:1998.7.30
+  text:・小渕内閣
+
+node:
+  id:9
+  column:3
+  type:text
+  date:2000.4.5
+  text:・第1次森内閣
+
+node:
+  id:10
+  column:3
+  type:text
+  date:2000.7.4
+  text:・第2次森内閣
+
+node:
+  id:11
+  column:3
+  type:text
+  date:2001.4.26
+  text:・第1次小泉内閣
+
+node:
+  id:12
+  column:3
+  type:text
+  date:2003.11.19
+  text:・第2次小泉内閣
+
+node:
+  id:13
+  column:3
+  type:text
+  date:2005.9.21
+  text:・第3次小泉内閣
+
+node:
+  id:14
+  column:3
+  type:text
+  date:2006.9.26
+  text:・第1次安倍内閣
+
+node:
+  id:15
+  column:3
+  type:text
+  date:2007.9.26
+  text:・福田（康）内閣
+
+node:
+  id:16
+  column:3
+  type:text
+  date:2008.9.24
+  text:・麻生内閣
+
+node:
+  id:17
+  column:3
+  type:text
+  date:2009.9.16
+  text:・鳩山（由）内閣
+
+node:
+  id:18
+  column:3
+  type:text
+  date:2010.6.8
+  text:・菅（直）内閣
+
+node:
+  id:19
+  column:3
+  type:text
+  date:2011.9.2
+  text:・野田内閣
+
+node:
+  id:20
+  column:3
+  type:text
+  date:2012.12.26
+  text:・第2次安倍内閣
+
+node:
+  id:21
+  column:3
+  type:text
+  date:2014.12.24
+  text:・第3次安倍内閣
+
+node:
+  id:22
+  column:3
+  type:text
+  date:2017.11.1
+  text:・第4次安倍内閣
+
+node:
+  id:23
+  column:3
+  type:text
+  date:2020.9.16
+  text:・菅（義）内閣
+
+node:
+  id:24
+  column:3
+  type:text
+  date:2021.10.4
+  text:・第1次岸田内閣
+
+node:
+  id:25
+  column:3
+  type:text
+  date:2021.11.10
+  text:・第2次岸田内閣
+
+node:
+  id:26
+  column:3
+  type:text
+  date:2024.10.1
+  text:・第1次石破内閣
+
+node:
+  id:27
+  column:3
+  type:text
+  date:2024.11.11
+  text:・第2次石破内閣
+
+node:
+  id:28
+  column:3
+  type:text
+  date:2025.10.21
+  text:・高市内閣
+
 
 node:
   id:1001
