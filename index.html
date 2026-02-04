@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Timeline SVG Editor</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Timeline SVG Editor</h1>
+      <div class="controls">
+        <button id="download-svg" type="button">SVGとして保存</button>
+      </div>
+    </header>
+    <main>
+      <section class="pane left">
+        <label for="dsl-input" class="pane-title">DSL入力</label>
+        <textarea id="dsl-input" spellcheck="false"></textarea>
+        <div id="error-area" class="error-area" aria-live="polite"></div>
+      </section>
+      <section class="pane right">
+        <div class="pane-title">SVGプレビュー</div>
+        <div id="error-banner" class="error-banner" hidden></div>
+        <div id="svg-container" class="svg-container"></div>
+        <div class="hint">
+          Ctrl+ホイールでズーム / ドラッグでパン
+        </div>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
