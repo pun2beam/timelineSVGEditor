@@ -38,6 +38,76 @@ column:
   type:base
   width:60pt
 
+column:
+  id:8
+  type:base
+  width:60pt
+
+column:
+  id:9
+  type:base
+  width:60pt
+
+column:
+  id:10
+  type:base
+  width:60pt
+
+column:
+  id:11
+  type:base
+  width:60pt
+
+column:
+  id:12
+  type:base
+  width:60pt
+
+column:
+  id:13
+  type:base
+  width:60pt
+
+column:
+  id:14
+  type:base
+  width:60pt
+
+column:
+  id:15
+  type:base
+  width:60pt
+
+column:
+  id:16
+  type:base
+  width:60pt
+
+column:
+  id:17
+  type:base
+  width:60pt
+
+column:
+  id:18
+  type:base
+  width:60pt
+
+column:
+  id:19
+  type:base
+  width:60pt
+
+column:
+  id:20
+  type:base
+  width:60pt
+
+column:
+  id:21
+  type:base
+  width:60pt
+
 node:
   id:1
   column:3
@@ -234,32 +304,6 @@ node:
   date:2025.10.21
   text:・高市内閣
 
-
-node:
-  id:1001
-  column:5
-  type:box
-  date:1990.1.1
-  text:日本共産党
-
-node:
-  id:1002
-  column:6
-  type:box
-  date:1990
-  text:自由民主党
-
-node:
-  id:1003
-  column:7
-  type:box
-  date:1993.4
-  text:さきがけ
-
-connector:
-  id:1
-  node:1002,1003
-
 band:
   id:1
   column:2
@@ -282,7 +326,7 @@ band:
   date:1994.6.30-1996.1.11
   text:自社さ
   color:#ffffff
-  bgcolor:#d080d0
+  bgcolor:#80e090
 
 band:
   id:3
@@ -298,7 +342,7 @@ band:
   date:1999.1.14-1999.10.5
   text:自自連立
   color:#ffffff
-  bgcolor:#00d0d0
+  bgcolor:#40d0a0
 
 band:
   id:5
@@ -306,7 +350,7 @@ band:
   date:1999.10.5-2000.4.5
   text:自自公
   color:#ffffff
-  bgcolor:#00d0d0
+  bgcolor:#30d0d0
 
 band:
   id:6
@@ -314,7 +358,7 @@ band:
   date:2000.4.5-2003.11.19
   text:自自保連立
   color:#ffffff
-  bgcolor:#00d0d0
+  bgcolor:#40d0a0
 
 band:
   id:7
@@ -322,7 +366,7 @@ band:
   date:2003.11.19-2009.9.16
   text:自公連立
   color:#ffffff
-  bgcolor:#00d0d0
+  bgcolor:#40d0d0
 
 band:
   id:8
@@ -330,7 +374,7 @@ band:
   date:2009.9.16-2010.5.30
   text:民社国
   color:#ffffff
-  bgcolor:#F0a030
+  bgcolor:#f0a070
 
 band:
   id:9
@@ -338,7 +382,7 @@ band:
   date:2010.5.30-2012.12.26
   text:民国連立
   color:#ffffff
-  bgcolor:#F0a030
+  bgcolor:#f0a030
 
 band:
   id:10
@@ -346,7 +390,7 @@ band:
   date:2012.12.26-2025.10.21
   text:自公連立
   color:#ffffff
-  bgcolor:#00d0d0
+  bgcolor:#40d0d0
 
 band:
   id:11
@@ -354,4 +398,85 @@ band:
   date:2025.10.21-2026.12.31
   text:自維連立
   color:#ffffff
-  bgcolor:#00d0d0
+  bgcolor:#00d0f0
+
+connector:
+  id:1
+  node:2003,2004
+
+node:
+  id:1001
+  column:5
+  type:box
+  date:1990.1.1
+  text:日本共産党
+
+node:
+  id:1501
+  column:6
+  type:box
+  date:1990.1.1
+  text:日本社会党
+
+node:
+  id:1502
+  column:8
+  type:box
+  date:1994.9.22
+  text:新党護憲リベラル
+
+node:
+  id:1503
+  column:8
+  type:box
+  date:1995.7
+  text:平和:市民
+
+node:
+  id:1504
+  column:9
+  type:box
+  date:1995.7
+  text:憲法みどり農の連帯
+
+node:
+  id:1505
+  column:6
+  type:box
+  date:1996.1
+  text:社会民主党
+
+node:
+  id:1506
+  column:7
+  type:box
+  date:1995.12.22
+  text:市民リーグ
+
+node:
+  id:2003
+  column:21
+  type:box
+  date:1990.1.1
+  text:自由民主党
+
+node:
+  id:2004
+  column:10
+  type:box
+  date:1993.6.21
+  text:新党さきがけ
+
+node:
+  id:2005
+  column:10
+  type:box
+  date:1998.7
+  text:さきがけ
+
+node:
+  id:2006
+  column:10
+  type:box
+  date:2002.1.16
+  text:みどりの会議
