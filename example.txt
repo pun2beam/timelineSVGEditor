@@ -53,7 +53,7 @@ connector:
 band:
   id:1
   column:2
-  year:1990-1993
+  date:1990-1993
   text:自由民主党
   color:#ffffff
   bgcolor:#00a0a0
@@ -61,7 +61,7 @@ band:
 band:
   id:2
   column:2
-  year:1993-1994
+  date:1993-1994
   text:非自民連立
   color:#ffffff
   bgcolor:#0a00a0

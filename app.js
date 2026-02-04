@@ -282,7 +282,7 @@ function normalizeModel(raw, parseErrors) {
   });
 
   raw.bands.forEach((band) => {
-    const missing = ["id", "column", "year", "text"].filter(
+    const missing = ["id", "column", "date", "text"].filter(
       (key) => !band[key],
     );
     if (missing.length) {
@@ -292,16 +292,16 @@ function normalizeModel(raw, parseErrors) {
       });
       return;
     }
-    const range = parseRange(band.year);
+    const range = parseRange(band.date);
     if (!range) {
-      errors.push({ line: band.line, message: "bandのyearが不正です" });
+      errors.push({ line: band.line, message: "bandのdateが不正です" });
       return;
     }
     const startValue = datePartsToValue(range.start);
     const endParts = advanceToNextUnit(range.end);
     const endValue = datePartsToValue(endParts);
     if (startValue === null || endValue === null) {
-      errors.push({ line: band.line, message: "bandのyearが不正です" });
+      errors.push({ line: band.line, message: "bandのdateが不正です" });
       return;
     }
     model.bands.push({
