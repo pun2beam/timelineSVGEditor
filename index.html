@@ -7,12 +7,6 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header>
-      <h1>Timeline SVG Editor</h1>
-      <div class="controls">
-        <button id="download-svg" type="button">SVGとして保存</button>
-      </div>
-    </header>
     <main>
       <section class="pane left">
         <label for="dsl-input" class="pane-title">DSL入力</label>
@@ -21,6 +15,9 @@
       </section>
       <section class="pane right">
         <div class="pane-title">SVGプレビュー</div>
+        <div class="controls">
+          <button id="download-svg" type="button">SVGとして保存</button>
+        </div>
         <div id="error-banner" class="error-banner" hidden></div>
         <div id="svg-container" class="svg-container"></div>
         <div class="hint">
