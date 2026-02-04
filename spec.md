@@ -86,7 +86,7 @@ column:
 
 ### 3.4 node ブロック
 
-必須：`id`, `column`, `type`, `year`, `text`
+必須：`id`, `column`, `type`, `date`, `text`
 
 例：
 
@@ -95,13 +95,13 @@ node:
   id:1
   column:3
   type:box
-  year:1990.1.1
+  date:1990.1.1
   text:日本共産党
 ```
 
 * `column`：配置先列ID
 * `type`：当面 `box` のみ必須実装（将来拡張可：point等）
-* `year`：日時指定（後述）
+* `date`：日時指定（後述）
 * `text`：表示文字列
 * 任意：`color`, `bgcolor`, `bordercolor`, `fontsize`, `padding`, `align`
 
@@ -357,21 +357,21 @@ node:
   id:1
   column:3
   type:box
-  year:1990.1.1
+  date:1990.1.1
   text:日本共産党
 
 node:
   id:2
   column:4
   type:box
-  year:1990.1.1
+  date:1990.1.1
   text:自由民主党
 
 node:
   id:3
   column:5
   type:box
-  year:1993.4
+  date:1993.4
   text:さきがけ
 
 connector:
@@ -411,7 +411,7 @@ band:
 
 * 入力例がエラーなく描画される
 * 年列が1990〜2026の縦スケールで表示される
-* nodeの箱が指定列・指定年位置に表示される
+* nodeの箱が指定列・指定日付位置に表示される
 * bandが指定期間で帯として表示される
 * connectorがnode間に線として表示される
 * 入力更新でリアルタイムに追従する
