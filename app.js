@@ -625,7 +625,7 @@ function renderSvg(layoutModel) {
       const centerY = node.y + node.height / 2;
       const lineHeight = fontSize * 1.2;
       if (isTwoLine) {
-        const textStartY = centerY - lineHeight / 2;
+        const textStartY = centerY - lineHeight;
         svgParts.push(
           `<text x="${centerX}" y="${textStartY}" text-anchor="middle" dominant-baseline="hanging" font-size="${fontSize}" fill="${
             node.color || "#111"
