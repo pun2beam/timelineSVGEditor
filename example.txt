@@ -25,30 +25,47 @@ column:
   type:base
   width:60pt
 
+column:
+  id:6
+  type:base
+  width:60pt
+
+column:
+  id:7
+  type:base
+  width:60pt
+
 node:
   id:1
   column:3
+  type:text
+  date:1991.11.5
+  text:・宮澤内閣
+
+node:
+  id:1001
+  column:5
   type:box
   date:1990.1.1
   text:日本共産党
 
 node:
-  id:2
-  column:4
+  id:1002
+  column:6
   type:box
   date:1990
   text:自由民主党
 
 node:
-  id:3
-  column:5
+  id:1003
+  column:7
   type:box
   date:1993.4
   text:さきがけ
 
 connector:
   id:1
-  node:2,3
+  node:1002,1003
 
 band:
   id:1
