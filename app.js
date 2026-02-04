@@ -11,75 +11,6 @@ const DEFAULTS = {
   bandBgColor: "#6666aa",
 };
 
-const exampleDsl = `column:
-  id:1
-  type:year
-  width:20pt
-  rowheight:20pt
-  period:1990-2026
-
-column:
-  id:2
-  type:base
-  width:15pt
-
-column:
-  id:3
-  type:base
-  width:20pt
-
-column:
-  id:4
-  type:base
-  width:20pt
-
-column:
-  id:5
-  type:base
-  width:20pt
-
-node:
-  id:1
-  column:3
-  type:box
-  date:1990.1.1
-  text:日本共産党
-
-node:
-  id:2
-  column:4
-  type:box
-  date:1990.1.1
-  text:自由民主党
-
-node:
-  id:3
-  column:5
-  type:box
-  date:1993.4
-  text:さきがけ
-
-connector:
-  id:1
-  node:2,3
-
-band:
-  id:1
-  column:2
-  year:1990-1993
-  text:自由民主党
-  color:#ffffff
-  bgcolor:#00a0a0
-
-band:
-  id:2
-  column:2
-  year:1993-1994
-  text:非自民連立
-  color:#ffffff
-  bgcolor:#0a00a0
-`;
-
 const dslInput = document.getElementById("dsl-input");
 const errorArea = document.getElementById("error-area");
 const errorBanner = document.getElementById("error-banner");
@@ -717,8 +648,25 @@ function render() {
 
 const debouncedRender = debounce(render, 200);
 
-function init() {
-  dslInput.value = exampleDsl;
+async function loadExampleDsl() {
+  const response = await fetch("example.txt");
+  if (!response.ok) {
+    throw new Error(`example.txtの取得に失敗しました: ${response.status}`);
+  }
+  return response.text();
+}
+
+async function init() {
+  try {
+    dslInput.value = await loadExampleDsl();
+  } catch (error) {
+    updateErrors([
+      {
+        line: null,
+        message: error instanceof Error ? error.message : "example.txtの読み込みに失敗しました",
+      },
+    ]);
+  }
   render();
 }
 
