@@ -509,6 +509,28 @@ function wrapTextByWidth(text, maxWidth, fontSize) {
   return lines;
 }
 
+function splitNodeBoxText(text, maxWidth, fontSize) {
+  if (!text) return { lines: [""], isTwoLine: false };
+  const normalized = String(text);
+  const hasEscapedNewline = normalized.includes("\\n");
+  const segments = hasEscapedNewline ? normalized.split("\\n") : normalized.split(/\n/);
+  if (segments.length > 1) {
+    return {
+      lines: [segments[0], segments.slice(1).join("")],
+      isTwoLine: true,
+    };
+  }
+  const widthPerChar = fontSize * 0.9;
+  const maxChars = Math.max(1, Math.floor(maxWidth / widthPerChar));
+  if (normalized.length > maxChars) {
+    return {
+      lines: [normalized.slice(0, maxChars), normalized.slice(maxChars)],
+      isTwoLine: true,
+    };
+  }
+  return { lines: [normalized], isTwoLine: false };
+}
+
 function renderSvg(layoutModel) {
   const {
     columns,
@@ -596,11 +618,31 @@ function renderSvg(layoutModel) {
       svgParts.push(
         `<rect x="${node.x}" y="${node.y}" width="${node.width}" height="${node.height}" rx="4" fill="${bgColor}" stroke="${borderColor}" />`,
       );
-      svgParts.push(
-        `<text x="${node.x + node.width / 2}" y="${node.y + node.height / 2}" text-anchor="middle" dominant-baseline="middle" font-size="${fontSize}" fill="${
-          node.color || "#111"
-        }">${truncateText(node.text)}</text>`,
-      );
+      const padding = DEFAULTS.nodePadding;
+      const maxTextWidth = Math.max(node.width - padding * 2, 10);
+      const { lines, isTwoLine } = splitNodeBoxText(node.text, maxTextWidth, fontSize);
+      const centerX = node.x + node.width / 2;
+      const centerY = node.y + node.height / 2;
+      const lineHeight = fontSize * 1.2;
+      if (isTwoLine) {
+        const textStartY = centerY - lineHeight / 2;
+        svgParts.push(
+          `<text x="${centerX}" y="${textStartY}" text-anchor="middle" dominant-baseline="hanging" font-size="${fontSize}" fill="${
+            node.color || "#111"
+          }">`,
+        );
+        lines.forEach((line, index) => {
+          const dy = index === 0 ? 0 : lineHeight;
+          svgParts.push(`<tspan x="${centerX}" dy="${dy}">${line}</tspan>`);
+        });
+        svgParts.push(`</text>`);
+      } else {
+        svgParts.push(
+          `<text x="${centerX}" y="${centerY}" text-anchor="middle" dominant-baseline="middle" font-size="${fontSize}" fill="${
+            node.color || "#111"
+          }">${lines[0]}</text>`,
+        );
+      }
     }
   });
 
