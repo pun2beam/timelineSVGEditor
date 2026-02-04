@@ -36,7 +36,7 @@
 ### 3.1 全体構造
 
 * DSLは「ブロック」の繰り返しで構成
-* ブロック種別：`column`, `node`, `connector`, `band`
+* ブロック種別：`column`, `node`, `connector`, `band`, `defaults`
 * ブロックは以下の形式：
 
 ```
@@ -145,7 +145,22 @@ connector:
 * 拡張：
 
   * 3点以上は折れ線（上から順に接続）または“ハブ”方式（仕様で選ぶ）
-  * 仕様固定案：**3点以上は「最初のnodeを起点」に他ノードへ個別線を引く（スター結合）**
+* 仕様固定案：**3点以上は「最初のnodeを起点」に他ノードへ個別線を引く（スター結合）**
+
+### 3.7 defaults ブロック（既定値）
+
+DSL内の既定値を上書きする。1つ以上指定可能で、同一キーは後勝ち。
+
+例：
+
+```
+defaults:
+  node.box.height:22px
+```
+
+対応キー：
+
+* `node.box.height`：`type:box` のノード高さの既定値。単位は `pt/px` または省略（px扱い）。
 
 ---
 
@@ -235,7 +250,7 @@ connector:
 ### 7.4 ノード（box）の配置
 
 * boxの幅：その列幅の 90%（左右margin 5%ずつ）または固定 `nodeWidth`（仕様固定案：列幅-8px）
-* boxの高さ：`minHeight = rowHeight*0.9`、テキスト折返しで増加可
+* boxの高さ：`defaults.node.box.height` が指定されていればその値、なければ `minHeight = rowHeight*0.9`
 * boxのy：指定日付の `y(dateValue)` を中心（または上端）にする
 
   * 仕様固定案：**中心合わせ**（boxCenterY = y(date))

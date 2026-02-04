@@ -66,6 +66,7 @@ function parseDsl(text) {
     nodes: [],
     bands: [],
     connectors: [],
+    defaults: [],
   };
 
   blocks.forEach((block) => {
@@ -81,6 +82,9 @@ function parseDsl(text) {
         break;
       case "connector":
         model.connectors.push({ ...block.entries, line: block.line });
+        break;
+      case "defaults":
+        model.defaults.push({ ...block.entries, line: block.line });
         break;
       default:
         errors.push({ line: block.line, message: `未知のブロック種別: ${block.type}` });
@@ -195,13 +199,31 @@ function parseRange(value) {
 
 function normalizeModel(raw, parseErrors) {
   const errors = [...parseErrors];
+  const defaults = {
+    nodeBoxHeightPx: null,
+  };
   const model = {
     columns: [],
     nodes: [],
     bands: [],
     connectors: [],
-    meta: { errors },
+    meta: { errors, defaults },
   };
+
+  raw.defaults.forEach((block) => {
+    Object.entries(block).forEach(([key, value]) => {
+      if (key === "line") return;
+      if (key === "node.box.height") {
+        const parsed = parseNumberWithUnit(value, block.line, errors, "node.box.height");
+        defaults.nodeBoxHeightPx = parsed;
+        return;
+      }
+      errors.push({
+        line: block.line,
+        message: `defaultsのキーが不明です: ${key}`,
+      });
+    });
+  });
 
   let columnCounter = 1;
   raw.columns.forEach((column) => {
@@ -345,6 +367,7 @@ function normalizeModel(raw, parseErrors) {
 
 function layout(model) {
   const errors = model.meta.errors;
+  const defaultNodeBoxHeight = model.meta.defaults?.nodeBoxHeightPx ?? null;
   const scaleColumn = model.columns.find(
     (column) => column.type === "year" && column.period,
   );
@@ -390,7 +413,9 @@ function layout(model) {
       }
       const y = DEFAULTS.topMargin + (node.dateValue - startYear) * rowHeight;
       const width = Math.max(column.widthPx - 8, 10);
-      const height = rowHeight * 0.9;
+      const height = node.type === "box" && defaultNodeBoxHeight !== null
+        ? defaultNodeBoxHeight
+        : rowHeight * 0.9;
       return {
         ...node,
         x: column.xCenter - width / 2,
