@@ -42,21 +42,21 @@ node:
   id:1
   column:3
   type:box
-  year:1990.1.1
+  date:1990.1.1
   text:日本共産党
 
 node:
   id:2
   column:4
   type:box
-  year:1990.1.1
+  date:1990.1.1
   text:自由民主党
 
 node:
   id:3
   column:5
   type:box
-  year:1993.4
+  date:1993.4
   text:さきがけ
 
 connector:
@@ -315,7 +315,7 @@ function normalizeModel(raw, parseErrors) {
   });
 
   raw.nodes.forEach((node) => {
-    const missing = ["id", "column", "type", "year", "text"].filter(
+    const missing = ["id", "column", "type", "date", "text"].filter(
       (key) => !node[key],
     );
     if (missing.length) {
@@ -325,14 +325,14 @@ function normalizeModel(raw, parseErrors) {
       });
       return;
     }
-    const dateParts = parseDateString(node.year);
+    const dateParts = parseDateString(node.date);
     if (!dateParts) {
-      errors.push({ line: node.line, message: "nodeのyearが不正です" });
+      errors.push({ line: node.line, message: "nodeのdateが不正です" });
       return;
     }
     const dateValue = datePartsToValue(dateParts);
     if (dateValue === null) {
-      errors.push({ line: node.line, message: "nodeのyearが不正です" });
+      errors.push({ line: node.line, message: "nodeのdateが不正です" });
       return;
     }
     model.nodes.push({
