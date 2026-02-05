@@ -355,11 +355,30 @@ function normalizeModel(raw, parseErrors) {
       errors.push({ line: node.line, message: "nodeのdateが不正です" });
       return;
     }
+    let endRaw = null;
+    let endDateValue = null;
+    if (node.end) {
+      endRaw = node.end.trim();
+      if (endRaw !== "*") {
+        const endParts = parseDateString(endRaw);
+        if (!endParts) {
+          errors.push({ line: node.line, message: "nodeのendが不正です" });
+          return;
+        }
+        endDateValue = datePartsToValue(endParts);
+        if (endDateValue === null) {
+          errors.push({ line: node.line, message: "nodeのendが不正です" });
+          return;
+        }
+      }
+    }
     model.nodes.push({
       id: Number(node.id),
       columnId: Number(node.column),
       type: node.type,
       dateValue,
+      endRaw,
+      endDateValue,
       text: node.text,
       color: node.color,
       bgColor: node.bgcolor,
@@ -536,11 +555,31 @@ function layout(model) {
     return { ...connector, points };
   });
 
+  const nodeEndLines = nodes
+    .filter((node) => node.type === "box" && node.endRaw)
+    .map((node) => {
+      if (!scaleColumn) return null;
+      const endValue = node.endRaw === "*" ? endYear + 1 : node.endDateValue;
+      if (endValue === null) return null;
+      const x = node.x + node.width / 2;
+      const startY = node.y + node.height / 2;
+      const endY = DEFAULTS.topMargin + (endValue - startYear) * rowHeight;
+      return {
+        x1: x,
+        y1: startY,
+        x2: x,
+        y2: endY,
+        color: node.borderColor || DEFAULTS.connectorColor,
+      };
+    })
+    .filter(Boolean);
+
   return {
     columns,
     nodes,
     bands,
     connectors,
+    nodeEndLines,
     yearLines,
     svgWidth,
     svgHeight,
@@ -604,6 +643,7 @@ function renderSvg(layoutModel) {
     nodes,
     bands,
     connectors,
+    nodeEndLines,
     yearLines,
     svgWidth,
     svgHeight,
@@ -654,6 +694,12 @@ function renderSvg(layoutModel) {
         );
       });
     }
+  });
+
+  nodeEndLines.forEach((line) => {
+    svgParts.push(
+      `<line x1="${line.x1}" y1="${line.y1}" x2="${line.x2}" y2="${line.y2}" stroke="${line.color}" stroke-width="1" />`,
+    );
   });
 
   nodes.forEach((node) => {
