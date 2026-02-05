@@ -9,7 +9,14 @@
   <body>
     <main>
       <section class="pane left">
-        <label for="dsl-input" class="pane-title">DSL入力</label>
+        <div class="header">
+          <label for="dsl-input" class="pane-title">DSL入力</label>
+          <div class="controls">
+            <button id="load-dsl" type="button">DSLを読み込む</button>
+            <button id="save-dsl" type="button">DSLとして保存</button>
+            <input id="dsl-file-input" type="file" accept=".txt,.dsl,text/plain" />
+          </div>
+        </div>
         <textarea id="dsl-input" spellcheck="false"></textarea>
         <div id="error-area" class="error-area" aria-live="polite"></div>
       </section>

@@ -37,6 +37,16 @@ header h1 {
   cursor: pointer;
 }
 
+.controls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.controls input[type="file"] {
+  display: none;
+}
+
 main {
   display: flex;
   height: calc(100vh - 0px);
