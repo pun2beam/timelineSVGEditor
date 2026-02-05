@@ -108,6 +108,26 @@ column:
   type:base
   width:60pt
 
+column:
+  id:22
+  type:base
+  width:60pt
+
+column:
+  id:23
+  type:base
+  width:60pt
+
+column:
+  id:24
+  type:base
+  width:60pt
+
+column:
+  id:25
+  type:base
+  width:60pt
+
 node:
   id:1
   column:3
@@ -455,28 +475,250 @@ node:
 
 node:
   id:2003
-  column:21
+  column:25
   type:box
   date:1990.1.1
   text:自由民主党
 
 node:
   id:2004
-  column:10
+  column:11
   type:box
   date:1993.6.21
   text:新党さきがけ
 
 node:
   id:2005
-  column:10
+  column:11
   type:box
   date:1998.7
   text:さきがけ
 
 node:
   id:2006
-  column:10
+  column:11
   type:box
   date:2002.1.16
   text:みどりの会議
+
+node:
+  id:2007
+  column:11
+  type:box
+  date:2004
+  text:みどりのテーブル
+
+node:
+  id:2008
+  column:11
+  type:box
+  date:2008
+  text:みどりの未来
+
+node:
+  id:2009
+  column:11
+  type:box
+  date:2008
+  text:緑の党
+
+node:
+  id:2100
+  column:17
+  type:box
+  date:1993
+  text:新生党
+
+node:
+  id:2101
+  column:20
+  type:box
+  date:1994.4.18
+  text:新党みらい
+
+node:
+  id:2102
+  column:21
+  type:box
+  date:1994.4.20
+  text:(柿澤)自由党
+
+node:
+  id:2103
+  column:22
+  type:box
+  date:1994.7.15
+  text:高志会
+
+node:
+  id:2104
+  column:22
+  type:box
+  date:1994.1
+  text:改革の会
+
+node:
+  id:2200
+  column:13
+  type:box
+  date:1990.1.1
+  text:民社党
+
+node:
+  id:2300
+  column:24
+  type:box
+  date:1990.1.1
+  text:公明党
+
+node:
+  id:2301
+  column:23
+  type:box
+  date:1994
+  text:公明新党
+
+node:
+  id:2302
+  column:24
+  type:box
+  date:1994
+  text:公明
+
+node:
+  id:2303
+  column:24
+  type:box
+  date:1998
+  text:公明党
+
+node:
+  id:2401
+  column:14
+  type:box
+  date:1990
+  text:社会民主連合
+
+node:
+  id:2402
+  column:15
+  type:box
+  date:1992.5.22
+  text:日本新党
+
+node:
+  id:2403
+  column:12
+  type:box
+  date:1990
+  text:(連合参議院)
+
+node:
+  id:2404
+  column:12
+  type:box
+  date:1993.1.20
+  text:民主改革連合
+
+node:
+  id:2405
+  column:15
+  type:box
+  date:1994.12.10
+  text:新進党
+
+node:
+  id:2406
+  column:12
+  type:box
+  date:1996.12.26
+  text:太陽党
+
+node:
+  id:2407
+  column:13
+  type:box
+  date:1997.1.23
+  text:フロム・ファイブ
+
+node:
+  id:2408
+  column:14
+  type:box
+  date:1998.1.4
+  text:国民の声
+
+node:
+  id:2409
+  column:15
+  type:box
+  date:1998.1.5
+  text:新党友愛
+
+node:
+  id:2410
+  column:16
+  type:box
+  date:1998.1.6
+  text:自由党
+
+node:
+  id:2411
+  column:17
+  type:box
+  date:1998.1.12
+  text:改革クラブ
+
+node:
+  id:2412
+  column:18
+  type:box
+  date:1998
+  text:新党平和
+
+node:
+  id:2413
+  column:19
+  type:box
+  date:1998
+  text:黎明クラブ
+
+node:
+  id:2414
+  column:18
+  type:box
+  date:2000.4.3
+  text:保守党
+
+node:
+  id:2415
+  column:18
+  type:box
+  date:2002.12.25
+  text:保守新党
+
+node:
+  id:2416
+  column:10
+  type:box
+  date:1996.9.29
+  text:民主党
+
+node:
+  id:2417
+  column:10
+  type:box
+  date:1998.4.27
+  text:民主党
+
+node:
+  id:2418
+  column:12
+  type:box
+  date:1998.1.23
+  text:民政党
+
+
+
+
+
