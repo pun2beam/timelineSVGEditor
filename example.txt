@@ -538,23 +538,26 @@ node:
 
 node:
   id:2101
-  column:20
+  column:19
   type:box
   date:1994.4.18
+  end:1994.12.9
   text:新党みらい
 
 node:
   id:2102
-  column:21
+  column:20
   type:box
   date:1994.4.20
+  end:1994.12.9
   text:(柿澤)自由党
 
 node:
   id:2103
-  column:22
+  column:21
   type:box
   date:1994.7.15
+  end:1994.12.9
   text:高志会
 
 node:
@@ -576,27 +579,31 @@ node:
   column:24
   type:box
   date:1990.1.1
+  end:1994.12.5
   text:公明党
 
 node:
   id:2301
   column:23
   type:box
-  date:1994
+  date:1994.12.5
+  end:1994.12.10
   text:公明新党
 
 node:
   id:2302
   column:24
   type:box
-  date:1994
+  date:1994.12.5
+  end:1998.11.7
   text:公明
 
 node:
   id:2303
   column:24
   type:box
-  date:1998
+  date:1998.11.7
+  end:*
   text:公明党
 
 node:
@@ -604,6 +611,7 @@ node:
   column:14
   type:box
   date:1990
+  end:1994.5.25
   text:社会民主連合
 
 node:
@@ -611,6 +619,7 @@ node:
   column:15
   type:box
   date:1992.5.22
+  end:1994.12.9
   text:日本新党
 
 node:
