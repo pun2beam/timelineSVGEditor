@@ -16,6 +16,9 @@ const errorArea = document.getElementById("error-area");
 const errorBanner = document.getElementById("error-banner");
 const svgContainer = document.getElementById("svg-container");
 const downloadButton = document.getElementById("download-svg");
+const saveDslButton = document.getElementById("save-dsl");
+const loadDslButton = document.getElementById("load-dsl");
+const dslFileInput = document.getElementById("dsl-file-input");
 const mainLayout = document.querySelector("main");
 const leftPane = document.querySelector(".pane.left");
 const rightPane = document.querySelector(".pane.right");
@@ -853,6 +856,31 @@ downloadButton.addEventListener("click", () => {
   link.download = "timeline.svg";
   link.click();
   URL.revokeObjectURL(url);
+});
+
+saveDslButton.addEventListener("click", () => {
+  const blob = new Blob([dslInput.value], { type: "text/plain" });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = "timeline.dsl";
+  link.click();
+  URL.revokeObjectURL(url);
+});
+
+loadDslButton.addEventListener("click", () => {
+  dslFileInput.click();
+});
+
+dslFileInput.addEventListener("change", async (event) => {
+  const [file] = event.target.files || [];
+  if (!file) return;
+  try {
+    dslInput.value = await file.text();
+    render();
+  } finally {
+    event.target.value = "";
+  }
 });
 
 init();
