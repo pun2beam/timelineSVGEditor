@@ -16,9 +16,14 @@ const errorArea = document.getElementById("error-area");
 const errorBanner = document.getElementById("error-banner");
 const svgContainer = document.getElementById("svg-container");
 const downloadButton = document.getElementById("download-svg");
+const mainLayout = document.querySelector("main");
+const leftPane = document.querySelector(".pane.left");
+const rightPane = document.querySelector(".pane.right");
+const paneResizer = document.getElementById("pane-resizer");
 
 let currentSvg = "";
 let currentViewBox = null;
+let leftPaneRatio = 0.4;
 
 function debounce(fn, delay) {
   let timer;
@@ -26,6 +31,65 @@ function debounce(fn, delay) {
     clearTimeout(timer);
     timer = setTimeout(() => fn(...args), delay);
   };
+}
+
+function clamp(value, min, max) {
+  return Math.min(Math.max(value, min), max);
+}
+
+function setPaneWidths(leftWidth) {
+  if (!mainLayout || !leftPane || !rightPane || !paneResizer) return;
+  const mainRect = mainLayout.getBoundingClientRect();
+  const resizerWidth = paneResizer.getBoundingClientRect().width || 6;
+  const minLeft = 220;
+  const minRight = 280;
+  const maxLeft = mainRect.width - resizerWidth - minRight;
+  const clampedLeft = clamp(leftWidth, minLeft, maxLeft);
+  const rightWidth = Math.max(mainRect.width - resizerWidth - clampedLeft, minRight);
+  leftPane.style.width = `${clampedLeft}px`;
+  rightPane.style.width = `${rightWidth}px`;
+  leftPaneRatio = clampedLeft / mainRect.width;
+  paneResizer.setAttribute("aria-valuenow", Math.round(leftPaneRatio * 100).toString());
+}
+
+function initializePaneResizer() {
+  if (!mainLayout || !leftPane || !rightPane || !paneResizer) return;
+  let isResizing = false;
+
+  const updateFromPointer = (event) => {
+    if (!isResizing) return;
+    const mainRect = mainLayout.getBoundingClientRect();
+    const nextLeft = event.clientX - mainRect.left;
+    setPaneWidths(nextLeft);
+  };
+
+  paneResizer.addEventListener("pointerdown", (event) => {
+    isResizing = true;
+    paneResizer.setPointerCapture(event.pointerId);
+    document.body.classList.add("is-resizing");
+  });
+
+  paneResizer.addEventListener("pointermove", updateFromPointer);
+
+  const stopResizing = (event) => {
+    if (!isResizing) return;
+    isResizing = false;
+    paneResizer.releasePointerCapture(event.pointerId);
+    document.body.classList.remove("is-resizing");
+  };
+
+  paneResizer.addEventListener("pointerup", stopResizing);
+  paneResizer.addEventListener("pointercancel", stopResizing);
+
+  window.addEventListener("resize", () => {
+    const mainRect = mainLayout.getBoundingClientRect();
+    setPaneWidths(mainRect.width * leftPaneRatio);
+  });
+
+  requestAnimationFrame(() => {
+    const mainRect = mainLayout.getBoundingClientRect();
+    setPaneWidths(mainRect.width * leftPaneRatio);
+  });
 }
 
 function parseDsl(text) {
@@ -775,6 +839,7 @@ async function init() {
     ]);
   }
   render();
+  initializePaneResizer();
 }
 
 dslInput.addEventListener("input", debouncedRender);

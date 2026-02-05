@@ -47,15 +47,31 @@ main {
   flex-direction: column;
   padding: 12px;
   gap: 8px;
+  min-width: 0;
 }
 
 .left {
   width: 40%;
-  border-right: 1px solid var(--border-color);
 }
 
 .right {
   width: 60%;
+}
+
+.pane-resizer {
+  width: 6px;
+  cursor: col-resize;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--border-color) 50%,
+    transparent 100%
+  );
+}
+
+.is-resizing {
+  cursor: col-resize;
+  user-select: none;
 }
 
 .pane-title {
