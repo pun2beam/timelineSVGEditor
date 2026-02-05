@@ -420,15 +420,12 @@ band:
   color:#ffffff
   bgcolor:#00d0f0
 
-connector:
-  id:1
-  node:2003,2004
-
 node:
   id:1001
   column:5
   type:box
   date:1990.1.1
+  end:*
   text:日本共産党
 
 node:
@@ -436,6 +433,7 @@ node:
   column:6
   type:box
   date:1990.1.1
+  end:1996.1.19
   text:日本社会党
 
 node:
@@ -443,6 +441,7 @@ node:
   column:8
   type:box
   date:1994.9.22
+  end:1995.6
   text:新党護憲リベラル
 
 node:
@@ -464,6 +463,7 @@ node:
   column:6
   type:box
   date:1996.1
+  end:*
   text:社会民主党
 
 node:
@@ -471,6 +471,7 @@ node:
   column:7
   type:box
   date:1995.12.22
+  end:1996.9.28
   text:市民リーグ
 
 node:
@@ -478,6 +479,7 @@ node:
   column:25
   type:box
   date:1990.1.1
+  end:*
   text:自由民主党
 
 node:
@@ -485,6 +487,7 @@ node:
   column:11
   type:box
   date:1993.6.21
+  end:2002.1.16
   text:新党さきがけ
 
 node:
@@ -499,34 +502,38 @@ node:
   column:11
   type:box
   date:2002.1.16
+  end:2004.10.31
   text:みどりの会議
 
 node:
   id:2007
   column:11
   type:box
-  date:2004
+  date:2005.2.13
+  end:2008.11.22
   text:みどりのテーブル
 
 node:
   id:2008
   column:11
   type:box
-  date:2008
+  date:2008.11.22
+  end:2012.7.28
   text:みどりの未来
 
 node:
   id:2009
   column:11
   type:box
-  date:2008
+  date:2012.7.28
   text:緑の党
 
 node:
   id:2100
   column:17
   type:box
-  date:1993
+  date:1993.6.23
+  end:1994.12.9
   text:新生党
 
 node:
