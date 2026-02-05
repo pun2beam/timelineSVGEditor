@@ -497,7 +497,11 @@ function layout(model) {
         });
         return null;
       }
-      const y = DEFAULTS.topMargin + (node.dateValue - startYear) * rowHeight;
+      const effectiveDateValue =
+        node.type === "box" && scaleColumn && node.dateValue < startYear
+          ? startYear
+          : node.dateValue;
+      const y = DEFAULTS.topMargin + (effectiveDateValue - startYear) * rowHeight;
       const width = Math.max(column.widthPx - 8, 10);
       const height = node.type === "box" && defaultNodeBoxHeight !== null
         ? defaultNodeBoxHeight
