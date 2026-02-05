@@ -17,13 +17,10 @@ body {
   color: #1f2328;
 }
 
-header {
+.header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 20px;
-  border-bottom: 1px solid var(--border-color);
-  background: var(--bg-light);
 }
 
 header h1 {
