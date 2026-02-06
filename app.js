@@ -510,7 +510,7 @@ function layout(model) {
 
   const totalYears = endYear - startYear + 1;
   const svgWidth = xCursor + DEFAULTS.leftMargin;
-  const svgHeight = DEFAULTS.topMargin + totalYears * rowHeight + DEFAULTS.topMargin;
+  let svgHeight = DEFAULTS.topMargin + totalYears * rowHeight + DEFAULTS.topMargin;
 
   const yearLines = [];
   if (scaleColumn) {
@@ -618,6 +618,7 @@ function layout(model) {
 
   if (isNodeBoxLastOn && scaleColumn) {
     const lastYBase = DEFAULTS.topMargin + (endYear + 1 - startYear) * rowHeight;
+    let maxLastBoxBottom = 0;
     nodes
       .filter((node) => node.type === "box" && node.endRaw)
       .forEach((node) => {
@@ -625,11 +626,15 @@ function layout(model) {
           node.endRaw === "*" || (node.endDateValue !== null && node.endDateValue >= endYear);
         if (!reachesEnd) return;
         const offsetY = node.offset?.y ?? 0;
+        maxLastBoxBottom = Math.max(maxLastBoxBottom, lastYBase + offsetY + node.height);
         nodes.push({
           ...node,
           y: lastYBase + offsetY,
         });
       });
+    if (maxLastBoxBottom > 0) {
+      svgHeight = Math.max(svgHeight, maxLastBoxBottom + DEFAULTS.topMargin);
+    }
   }
 
   return {
