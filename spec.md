@@ -164,7 +164,7 @@ defaults:
 
 * `node.box.height`：`type:box` のノード高さの既定値。単位は `pt/px` または省略（px扱い）。
 * `node.box.last`：`on/off` を指定。`on` の場合、`type:box` かつ年表示列の末尾まで継続するノードは末尾位置にも同じボックスを再描画する。
-* `node.id.visible`：`on/off` を指定。`on` の場合、ノードの左上に `id` を表示する。
+* `node.id.visible`：`on/off` を指定。`on` の場合、ノードの左上（ボックス外側）に `id` を表示する。
 
 ### 3.8 transition ブロック（遷移矢印）
 
