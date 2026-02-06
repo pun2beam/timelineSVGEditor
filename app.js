@@ -191,6 +191,20 @@ function parseOffset(value, line, errors) {
   return { x: Number(match[1]), y: Number(match[2]) };
 }
 
+function parseIdList(value, line, errors, errorMessage) {
+  if (!value) return null;
+  const ids = value
+    .split(",")
+    .map((entry) => entry.trim())
+    .filter(Boolean)
+    .map((entry) => Number(entry));
+  if (!ids.length || ids.some((id) => Number.isNaN(id))) {
+    errors.push({ line, message: errorMessage });
+    return null;
+  }
+  return ids;
+}
+
 function parseDateString(raw) {
   if (!raw) return null;
   const trimmed = raw.trim();
@@ -509,10 +523,19 @@ function normalizeModel(raw, parseErrors) {
       errors.push({ line: transition.line, message: "transitionにfromとtoが必要です" });
       return;
     }
-    const fromId = Number(transition.from);
-    const toId = Number(transition.to);
-    if (Number.isNaN(fromId) || Number.isNaN(toId)) {
-      errors.push({ line: transition.line, message: "transitionのfrom/toが不正です" });
+    const fromIds = parseIdList(
+      transition.from,
+      transition.line,
+      errors,
+      "transitionのfrom/toが不正です",
+    );
+    const toIds = parseIdList(
+      transition.to,
+      transition.line,
+      errors,
+      "transitionのfrom/toが不正です",
+    );
+    if (!fromIds || !toIds) {
       return;
     }
     const offset = transition.fromoffset
@@ -531,11 +554,15 @@ function normalizeModel(raw, parseErrors) {
         return;
       }
     }
-    model.transitions.push({
-      fromId,
-      toId,
-      offset,
-      dateValue,
+    fromIds.forEach((fromId) => {
+      toIds.forEach((toId) => {
+        model.transitions.push({
+          fromId,
+          toId,
+          offset,
+          dateValue,
+        });
+      });
     });
   });
 
