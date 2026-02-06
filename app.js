@@ -538,8 +538,11 @@ function normalizeModel(raw, parseErrors) {
     if (!fromIds || !toIds) {
       return;
     }
-    const offset = transition.fromoffset
+    const fromOffset = transition.fromoffset
       ? parseOffset(transition.fromoffset, transition.line, errors)
+      : null;
+    const toOffset = transition.tooffset
+      ? parseOffset(transition.tooffset, transition.line, errors)
       : null;
     let dateValue = null;
     if (transition.date) {
@@ -559,7 +562,8 @@ function normalizeModel(raw, parseErrors) {
         model.transitions.push({
           fromId,
           toId,
-          offset,
+          fromOffset,
+          toOffset,
           dateValue,
         });
       });
@@ -697,13 +701,15 @@ function layout(model) {
         transition.dateValue !== null
           ? DEFAULTS.topMargin + (transition.dateValue - startYear) * rowHeight
           : toNode.y;
-      const offsetX = transition.offset?.x ?? 0;
-      const offsetY = transition.offset?.y ?? 0;
+      const fromOffsetX = transition.fromOffset?.x ?? 0;
+      const fromOffsetY = transition.fromOffset?.y ?? 0;
+      const toOffsetX = transition.toOffset?.x ?? 0;
+      const toOffsetY = transition.toOffset?.y ?? 0;
       return {
-        fromX: fromNode.x + fromNode.width / 2 + offsetX,
-        fromY: baseY + offsetY,
-        toX: toNode.x + toNode.width / 2,
-        toY: baseY,
+        fromX: fromNode.x + fromNode.width / 2 + fromOffsetX,
+        fromY: baseY + fromOffsetY,
+        toX: toNode.x + toNode.width / 2 + toOffsetX,
+        toY: baseY + toOffsetY,
       };
     })
     .filter(Boolean);
