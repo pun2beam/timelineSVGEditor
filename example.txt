@@ -1,6 +1,8 @@
 defaults:
   node.box.height:40px
   node.box.last:on
+  node.id.visible:on
+
 
 column:
   id:1
@@ -1101,7 +1103,32 @@ node:
   text:チームみらい
 
 transition:
-  from:6
-  to:7
+  from:1501
+  to:1502
   fromoffset:0,-10
 
+transition:
+  from:1502
+  to:1503,1504
+  fromoffset:0,-10
+
+transition:
+  from:1501
+  to:1506
+  fromoffset:0,-10
+
+transition:
+  from:2003
+  to:2004
+  fromoffset:0,-10
+
+transition:
+  from:2003
+  to:2100
+  fromoffset:0,-10
+
+transition:
+  from:2401
+  to:2004,2402
+  fromoffset:0,-4
+  date:1994.5.22
