@@ -283,6 +283,7 @@ function normalizeModel(raw, parseErrors) {
   const defaults = {
     nodeBoxHeightPx: null,
     nodeBoxLast: false,
+    nodeIdVisible: false,
   };
   const model = {
     columns: [],
@@ -314,6 +315,22 @@ function normalizeModel(raw, parseErrors) {
         errors.push({
           line: block.line,
           message: `node.box.lastの値が不正です: ${value}`,
+        });
+        return;
+      }
+      if (key === "node.id.visible") {
+        const normalized = value.trim().toLowerCase();
+        if (normalized === "on") {
+          defaults.nodeIdVisible = true;
+          return;
+        }
+        if (normalized === "off") {
+          defaults.nodeIdVisible = false;
+          return;
+        }
+        errors.push({
+          line: block.line,
+          message: `node.id.visibleの値が不正です: ${value}`,
         });
         return;
       }
@@ -529,6 +546,7 @@ function layout(model) {
   const errors = model.meta.errors;
   const defaultNodeBoxHeight = model.meta.defaults?.nodeBoxHeightPx ?? null;
   const isNodeBoxLastOn = model.meta.defaults?.nodeBoxLast ?? false;
+  const isNodeIdVisible = model.meta.defaults?.nodeIdVisible ?? false;
   const scaleColumn = model.columns.find(
     (column) => column.type === "year" && column.period,
   );
@@ -716,6 +734,7 @@ function layout(model) {
     rowHeight,
     startYear,
     endYear,
+    isNodeIdVisible,
     errors,
   };
 }
@@ -778,6 +797,7 @@ function renderSvg(layoutModel) {
     yearLines,
     svgWidth,
     svgHeight,
+    isNodeIdVisible,
     errors,
   } = layoutModel;
 
@@ -848,6 +868,7 @@ function renderSvg(layoutModel) {
     const fontSize = node.fontSize
       ? parseNumberWithUnit(node.fontSize, 0, [], "font") || DEFAULTS.fontSize
       : DEFAULTS.fontSize;
+    const idFontSize = Math.max(fontSize - 2, 8);
     if (node.type === "text") {
       const padding = node.padding
         ? parseNumberWithUnit(node.padding, 0, [], "padding") || DEFAULTS.nodePadding
@@ -867,6 +888,11 @@ function renderSvg(layoutModel) {
         svgParts.push(`<tspan x="${textX}" dy="${dy}">${line}</tspan>`);
       });
       svgParts.push(`</text>`);
+      if (isNodeIdVisible) {
+        svgParts.push(
+          `<text x="${node.x + 2}" y="${node.y + 2}" text-anchor="start" dominant-baseline="hanging" font-size="${idFontSize}" fill="${node.color || "#111"}">${node.id}</text>`,
+        );
+      }
     } else {
       const dashArrayAttr = node.borderDasharray
         ? ` stroke-dasharray="${node.borderDasharray}"`
@@ -874,6 +900,11 @@ function renderSvg(layoutModel) {
       svgParts.push(
         `<rect x="${node.x}" y="${node.y}" width="${node.width}" height="${node.height}" rx="4" fill="${bgColor}" stroke="${borderColor}"${dashArrayAttr} />`,
       );
+      if (isNodeIdVisible) {
+        svgParts.push(
+          `<text x="${node.x + 2}" y="${node.y + 2}" text-anchor="start" dominant-baseline="hanging" font-size="${idFontSize}" fill="${node.color || "#111"}">${node.id}</text>`,
+        );
+      }
       const padding = DEFAULTS.nodePadding;
       const maxTextWidth = Math.max(node.width - padding * 2, 10);
       const { lines, isTwoLine } = splitNodeBoxText(node.text, maxTextWidth, fontSize);
