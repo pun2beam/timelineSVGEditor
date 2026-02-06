@@ -98,9 +98,11 @@ connector:
 ```
 defaults:
   node.box.height:22px
+  node.box.last:on
 ```
 
 - `node.box.height` でボックスの高さを既定値として指定
+- `node.box.last` を `on` にすると、年表示列の末尾まで継続する `type:box` ノードを末尾位置にも描画
 
 ## レイアウトの考え方
 

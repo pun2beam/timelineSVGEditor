@@ -278,6 +278,7 @@ function normalizeModel(raw, parseErrors) {
   const errors = [...parseErrors];
   const defaults = {
     nodeBoxHeightPx: null,
+    nodeBoxLast: false,
   };
   const model = {
     columns: [],
@@ -293,6 +294,22 @@ function normalizeModel(raw, parseErrors) {
       if (key === "node.box.height") {
         const parsed = parseNumberWithUnit(value, block.line, errors, "node.box.height");
         defaults.nodeBoxHeightPx = parsed;
+        return;
+      }
+      if (key === "node.box.last") {
+        const normalized = value.trim().toLowerCase();
+        if (normalized === "on") {
+          defaults.nodeBoxLast = true;
+          return;
+        }
+        if (normalized === "off") {
+          defaults.nodeBoxLast = false;
+          return;
+        }
+        errors.push({
+          line: block.line,
+          message: `node.box.lastの値が不正です: ${value}`,
+        });
         return;
       }
       errors.push({
@@ -471,6 +488,7 @@ function normalizeModel(raw, parseErrors) {
 function layout(model) {
   const errors = model.meta.errors;
   const defaultNodeBoxHeight = model.meta.defaults?.nodeBoxHeightPx ?? null;
+  const isNodeBoxLastOn = model.meta.defaults?.nodeBoxLast ?? false;
   const scaleColumn = model.columns.find(
     (column) => column.type === "year" && column.period,
   );
@@ -597,6 +615,22 @@ function layout(model) {
       };
     })
     .filter(Boolean);
+
+  if (isNodeBoxLastOn && scaleColumn) {
+    const lastYBase = DEFAULTS.topMargin + (endYear - startYear) * rowHeight;
+    nodes
+      .filter((node) => node.type === "box" && node.endRaw)
+      .forEach((node) => {
+        const reachesEnd =
+          node.endRaw === "*" || (node.endDateValue !== null && node.endDateValue >= endYear);
+        if (!reachesEnd) return;
+        const offsetY = node.offset?.y ?? 0;
+        nodes.push({
+          ...node,
+          y: lastYBase + offsetY,
+        });
+      });
+  }
 
   return {
     columns,
