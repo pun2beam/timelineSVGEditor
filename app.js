@@ -890,7 +890,7 @@ function renderSvg(layoutModel) {
       svgParts.push(`</text>`);
       if (isNodeIdVisible) {
         svgParts.push(
-          `<text x="${node.x + 2}" y="${node.y + 2}" text-anchor="start" dominant-baseline="hanging" font-size="${idFontSize}" fill="${node.color || "#111"}">${node.id}</text>`,
+          `<text x="${node.x - 2}" y="${node.y - 2}" text-anchor="end" dominant-baseline="ideographic" font-size="${idFontSize}" fill="${node.color || "#111"}">${node.id}</text>`,
         );
       }
     } else {
@@ -902,7 +902,7 @@ function renderSvg(layoutModel) {
       );
       if (isNodeIdVisible) {
         svgParts.push(
-          `<text x="${node.x + 2}" y="${node.y + 2}" text-anchor="start" dominant-baseline="hanging" font-size="${idFontSize}" fill="${node.color || "#111"}">${node.id}</text>`,
+          `<text x="${node.x - 2}" y="${node.y - 2}" text-anchor="end" dominant-baseline="ideographic" font-size="${idFontSize}" fill="${node.color || "#111"}">${node.id}</text>`,
         );
       }
       const padding = DEFAULTS.nodePadding;
