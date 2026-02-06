@@ -424,6 +424,9 @@ function normalizeModel(raw, parseErrors) {
       errors.push({ line: band.line, message: "bandのdateが不正です" });
       return;
     }
+    const widthPx = band.width
+      ? parseNumberWithUnit(band.width, band.line, errors, "band width")
+      : null;
     model.bands.push({
       id: Number(band.id),
       columnId: Number(band.column),
@@ -432,6 +435,7 @@ function normalizeModel(raw, parseErrors) {
       text: band.text,
       color: band.color,
       bgColor: band.bgcolor,
+      widthPx,
     });
   });
 
@@ -542,11 +546,12 @@ function layout(model) {
       const yEnd =
         DEFAULTS.topMargin + (band.endDateValue - startYear) * rowHeight;
       const padding = 2;
+      const width = band.widthPx ?? Math.max(column.widthPx - padding * 2, 4);
       return {
         ...band,
-        x: column.xStart + padding,
+        x: band.widthPx ? column.xCenter - width / 2 : column.xStart + padding,
         y: yStart,
-        width: Math.max(column.widthPx - padding * 2, 4),
+        width,
         height: Math.max(yEnd - yStart, rowHeight * 0.2),
       };
     })
