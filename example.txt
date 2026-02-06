@@ -424,7 +424,7 @@ node:
   id:1001
   column:5
   type:box
-  date:1990.1.1
+  date:1922.7.15
   end:*
   text:日本共産党
 
@@ -432,7 +432,7 @@ node:
   id:1501
   column:6
   type:box
-  date:1990.1.1
+  date:1945.11.2
   end:1996.1.19
   text:日本社会党
 
@@ -478,7 +478,7 @@ node:
   id:2003
   column:25
   type:box
-  date:1990.1.1
+  date:1955.11.15
   end:*
   text:自由民主党
 
@@ -565,20 +565,22 @@ node:
   column:22
   type:box
   date:1994.1
+  end:1994.12.9
   text:改革の会
 
 node:
   id:2200
   column:13
   type:box
-  date:1990.1.1
+  date:1960.1.24
+  end:1994.12.9
   text:民社党
 
 node:
   id:2300
   column:24
   type:box
-  date:1990.1.1
+  date:1964.11.17
   end:1994.12.5
   text:公明党
 
@@ -610,7 +612,7 @@ node:
   id:2401
   column:14
   type:box
-  date:1990
+  date:1978.3.26
   end:1994.5.25
   text:社会民主連合
 
@@ -626,7 +628,8 @@ node:
   id:2403
   column:12
   type:box
-  date:1990
+  date:1989.6.9
+  end:1993.1.20
   text:(連合参議院)
 
 node:
@@ -634,6 +637,7 @@ node:
   column:12
   type:box
   date:1993.1.20
+  end:1998.4.27
   text:民主改革連合
 
 node:
@@ -641,62 +645,71 @@ node:
   column:15
   type:box
   date:1994.12.10
+  end:1997.12.27
   text:新進党
 
 node:
   id:2406
-  column:12
+  column:13
   type:box
   date:1996.12.26
+  end:1998.1.23
   text:太陽党
 
 node:
   id:2407
-  column:13
+  column:14
   type:box
   date:1997.1.23
+  end:1998.1.23
   text:フロム・ファイブ
 
 node:
   id:2408
-  column:14
+  column:15
   type:box
   date:1998.1.4
+  end:1998.1.23
   text:国民の声
 
 node:
   id:2409
-  column:15
+  column:16
   type:box
   date:1998.1.5
+  end:1998.4.27
   text:新党友愛
 
 node:
   id:2410
-  column:16
+  column:17
   type:box
   date:1998.1.6
+  end:2003.9.26
   text:自由党
 
 node:
   id:2411
-  column:17
+  column:18
   type:box
   date:1998.1.12
+  end:2000
   text:改革クラブ
 
 node:
   id:2412
-  column:18
+  column:19
   type:box
   date:1998
+  end:1998.11.7
   text:新党平和
 
 node:
   id:2413
-  column:19
+  column:20
   type:box
   date:1998
+  end:1998.1.18
   text:黎明クラブ
 
 node:
@@ -704,6 +717,7 @@ node:
   column:18
   type:box
   date:2000.4.3
+  end:2002.12.25
   text:保守党
 
 node:
@@ -711,6 +725,7 @@ node:
   column:18
   type:box
   date:2002.12.25
+  end:2003.11.21
   text:保守新党
 
 node:
@@ -718,6 +733,7 @@ node:
   column:10
   type:box
   date:1996.9.29
+  end:1998.4.27
   text:民主党
 
 node:
@@ -725,15 +741,154 @@ node:
   column:10
   type:box
   date:1998.4.27
+  end:2016.3.27
   text:民主党
 
 node:
   id:2418
-  column:12
+  column:13
   type:box
   date:1998.1.23
+  end:1998.4.27
   text:民政党
 
+node:
+  id:2419
+  column:14
+  type:box
+  date:2005.8.17
+  end:2013.3.22
+  text:国民新党
+
+node:
+  id:2419
+  column:15
+  type:box
+  date:2005.8.21
+  end:2015.1.31
+  text:新党日本
+
+node:
+  id:2420
+  column:16
+  type:box
+  date:2010.4.10
+  end:2012.11.13
+  text:たちあがれ日本
+
+node:
+  id:2420
+  column:16
+  type:box
+  date:2012.11.13
+  end:2012.11.17
+  text:太陽の党
+
+node:
+  id:2421
+  column:19
+  type:box
+  date:2011.12.28
+  end:*
+  text:新党大地
+
+node:
+  id:2422
+  column:13
+  type:box
+  date:2009.8.8
+  end:2014.11.28
+  text:みんなの党
+
+node:
+  id:2423
+  column:14
+  type:box
+  date:2013.12.18
+  end:2014.9.21
+  text:結いの党
+
+node:
+  id:2424
+  column:11
+  type:box
+  date:2015.1.8
+  end:2018.12.10
+  text:日本を元気にする会
+
+
+node:
+  id:2430
+  column:10
+  type:box
+  date:2016.3.27
+  end:2018.5.7
+  text:民進党
+
+node:
+  id:2431
+  column:12
+  type:box
+  date:2008.8.28
+  end:2010.4.23
+  text:改革クラブ
+
+
+node:
+  id:2432
+  column:12
+  type:box
+  date:2010.4.23
+  end:2016.7.25
+  text:新党改革
+
+node:
+  id:2433
+  column:8
+  type:box
+  date:2011.12.30
+  end:2012.11.15
+  text:新党きづな
+
+node:
+  id:2434
+  column:9
+  type:box
+  date:2012.7.11
+  end:2012.12.16
+  text:国民の生活が第一
+
+node:
+  id:2435
+  column:9
+  type:box
+  date:2012.11.28
+  end:2012.12.27
+  text:日本未来の党
+
+node:
+  id:2436
+  column:9
+  type:box
+  date:2012.12.28
+  end:2014.12.26
+  text:生活の党
+
+node:
+  id:2437
+  column:9
+  type:box
+  date:2014.12.26
+  end:2016.10.12
+  text:生活の党と山本太郎と.
+
+node:
+  id:2438
+  column:9
+  type:box
+  date:2016.10.12
+  end:2019.4.26
+  text:自由党
 
 
 
