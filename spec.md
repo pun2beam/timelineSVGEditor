@@ -97,13 +97,14 @@ node:
   type:box
   date:1990.1.1
   text:日本共産党
+  borderdasharray:4 2
 ```
 
 * `column`：配置先列ID
 * `type`：当面 `box` のみ必須実装（将来拡張可：point等）
 * `date`：日時指定（後述）
 * `text`：表示文字列
-* 任意：`color`, `bgcolor`, `bordercolor`, `fontsize`, `padding`, `align`
+* 任意：`color`, `bgcolor`, `bordercolor`, `borderdasharray`, `fontsize`, `padding`, `align`
 * 任意：`offset`（`x,y` 形式でpx指定。座標に加算して微調整）
 
 ### 3.5 band ブロック（期間帯）
