@@ -163,6 +163,7 @@ defaults:
 対応キー：
 
 * `node.box.height`：`type:box` のノード高さの既定値。単位は `pt/px` または省略（px扱い）。
+* `node.box.last`：`on/off` を指定。`on` の場合、`type:box` かつ年表示列の末尾まで継続するノードは末尾位置にも同じボックスを再描画する。
 
 ---
 
