@@ -754,7 +754,7 @@ node:
 
 node:
   id:2419
-  column:14
+  column:15
   type:box
   date:2005.8.17
   end:2013.3.22
@@ -762,7 +762,7 @@ node:
 
 node:
   id:2419
-  column:15
+  column:16
   type:box
   date:2005.8.21
   end:2015.1.31
@@ -770,7 +770,7 @@ node:
 
 node:
   id:2420
-  column:16
+  column:17
   type:box
   date:2010.4.10
   end:2012.11.13
@@ -778,7 +778,7 @@ node:
 
 node:
   id:2420
-  column:16
+  column:17
   type:box
   date:2012.11.13
   end:2012.11.17
@@ -802,7 +802,7 @@ node:
 
 node:
   id:2423
-  column:14
+  column:15
   type:box
   date:2013.12.18
   end:2014.9.21
@@ -844,7 +844,7 @@ node:
 
 node:
   id:2433
-  column:8
+  column:7
   type:box
   date:2011.12.30
   end:2012.11.15
@@ -852,7 +852,7 @@ node:
 
 node:
   id:2434
-  column:9
+  column:8
   type:box
   date:2012.7.11
   end:2012.12.16
@@ -860,7 +860,7 @@ node:
 
 node:
   id:2435
-  column:9
+  column:8
   type:box
   date:2012.11.28
   end:2012.12.27
@@ -868,7 +868,7 @@ node:
 
 node:
   id:2436
-  column:9
+  column:8
   type:box
   date:2012.12.28
   end:2014.12.26
@@ -877,7 +877,7 @@ node:
 
 node:
   id:2437
-  column:9
+  column:8
   type:box
   date:2014.12.26
   end:2016.10.12
@@ -885,12 +885,82 @@ node:
 
 node:
   id:2438
-  column:9
+  column:8
   type:box
   date:2016.10.12
   end:2019.4.26
   text:自由党
 
+node:
+  id:2439
+  column:14
+  type:box
+  date:2012.11.15
+  end:2013.12.31
+  text:みどりの風
 
+node:
+  id:2439
+  column:13
+  type:box
+  date:2017.9.25
+  end:2018.5.7
+  text:希望の党
+
+node:
+  id:2439
+  column:13
+  type:box
+  date:2018.5.7
+  end:2021.10.1
+  text:希望の党
+
+node:
+  id:2439
+  column:12
+  type:box
+  date:2018.5.7
+  end:2018.5.7
+  text:国民党
+
+node:
+  id:2439
+  column:9
+  type:box
+  date:2017.10.3
+  end:2020.9.14
+  text:立憲民主党
+
+node:
+  id:2439
+  column:10
+  type:box
+  date:2018.5.7
+  end:2020.9.11
+  text:国民民主党
+
+node:
+  id:2439
+  column:10
+  type:box
+  date:2020.9.11
+  end:*
+  text:国民民主党
+
+node:
+  id:2439
+  column:9
+  type:box
+  date:2020.9.15
+  end:2026.1.16
+  text:立憲民主党
+
+node:
+  id:2439
+  column:9
+  type:box
+  date:2026.1.16
+  end:*
+  text:中道改革連合
 
 
