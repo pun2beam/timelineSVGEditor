@@ -1100,4 +1100,8 @@ node:
   end:*
   text:チームみらい
 
+transition:
+  from:6
+  to:7
+  fromoffset:0,-10
 

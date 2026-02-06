@@ -133,6 +133,7 @@ function parseDsl(text) {
     nodes: [],
     bands: [],
     connectors: [],
+    transitions: [],
     defaults: [],
   };
 
@@ -149,6 +150,9 @@ function parseDsl(text) {
         break;
       case "connector":
         model.connectors.push({ ...block.entries, line: block.line });
+        break;
+      case "transition":
+        model.transitions.push({ ...block.entries, line: block.line });
         break;
       case "defaults":
         model.defaults.push({ ...block.entries, line: block.line });
@@ -285,6 +289,7 @@ function normalizeModel(raw, parseErrors) {
     nodes: [],
     bands: [],
     connectors: [],
+    transitions: [],
     meta: { errors, defaults },
   };
 
@@ -482,6 +487,41 @@ function normalizeModel(raw, parseErrors) {
     });
   });
 
+  raw.transitions.forEach((transition) => {
+    if (!transition.from || !transition.to) {
+      errors.push({ line: transition.line, message: "transitionにfromとtoが必要です" });
+      return;
+    }
+    const fromId = Number(transition.from);
+    const toId = Number(transition.to);
+    if (Number.isNaN(fromId) || Number.isNaN(toId)) {
+      errors.push({ line: transition.line, message: "transitionのfrom/toが不正です" });
+      return;
+    }
+    const offset = transition.fromoffset
+      ? parseOffset(transition.fromoffset, transition.line, errors)
+      : null;
+    let dateValue = null;
+    if (transition.date) {
+      const dateParts = parseDateString(transition.date);
+      if (!dateParts) {
+        errors.push({ line: transition.line, message: "transitionのdateが不正です" });
+        return;
+      }
+      dateValue = datePartsToValue(dateParts);
+      if (dateValue === null) {
+        errors.push({ line: transition.line, message: "transitionのdateが不正です" });
+        return;
+      }
+    }
+    model.transitions.push({
+      fromId,
+      toId,
+      offset,
+      dateValue,
+    });
+  });
+
   return model;
 }
 
@@ -597,6 +637,32 @@ function layout(model) {
     return { ...connector, points };
   });
 
+  const transitions = model.transitions
+    .map((transition) => {
+      const fromNode = nodeMap.get(transition.fromId);
+      const toNode = nodeMap.get(transition.toId);
+      if (!fromNode || !toNode) {
+        errors.push({
+          line: 0,
+          message: `transitionのnode参照が不正です (from:${transition.fromId}, to:${transition.toId})`,
+        });
+        return null;
+      }
+      const baseY =
+        transition.dateValue !== null
+          ? DEFAULTS.topMargin + (transition.dateValue - startYear) * rowHeight
+          : toNode.y;
+      const offsetX = transition.offset?.x ?? 0;
+      const offsetY = transition.offset?.y ?? 0;
+      return {
+        fromX: fromNode.x + fromNode.width / 2 + offsetX,
+        fromY: baseY + offsetY,
+        toX: toNode.x + toNode.width / 2,
+        toY: baseY,
+      };
+    })
+    .filter(Boolean);
+
   const nodeEndLines = nodes
     .filter((node) => node.type === "box" && node.endRaw)
     .map((node) => {
@@ -642,6 +708,7 @@ function layout(model) {
     nodes,
     bands,
     connectors,
+    transitions,
     nodeEndLines,
     yearLines,
     svgWidth,
@@ -706,6 +773,7 @@ function renderSvg(layoutModel) {
     nodes,
     bands,
     connectors,
+    transitions,
     nodeEndLines,
     yearLines,
     svgWidth,
@@ -720,6 +788,9 @@ function renderSvg(layoutModel) {
   const svgParts = [];
   svgParts.push(
     `<svg xmlns="http://www.w3.org/2000/svg" width="${svgWidth}" height="${svgHeight}" viewBox="0 0 ${svgWidth} ${svgHeight}">`,
+  );
+  svgParts.push(
+    `<defs><marker id="arrowhead" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto" markerUnits="strokeWidth"><polygon points="0 0, 8 3, 0 6" fill="${DEFAULTS.connectorColor}" /></marker></defs>`,
   );
   svgParts.push(`<g id="timeline-root">`);
 
@@ -757,6 +828,12 @@ function renderSvg(layoutModel) {
         );
       });
     }
+  });
+
+  transitions.forEach((transition) => {
+    svgParts.push(
+      `<line x1="${transition.fromX}" y1="${transition.fromY}" x2="${transition.toX}" y2="${transition.toY}" stroke="${DEFAULTS.connectorColor}" stroke-width="1" marker-end="url(#arrowhead)" />`,
+    );
   });
 
   nodeEndLines.forEach((line) => {

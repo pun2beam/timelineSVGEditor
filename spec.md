@@ -165,6 +165,27 @@ defaults:
 * `node.box.height`：`type:box` のノード高さの既定値。単位は `pt/px` または省略（px扱い）。
 * `node.box.last`：`on/off` を指定。`on` の場合、`type:box` かつ年表示列の末尾まで継続するノードは末尾位置にも同じボックスを再描画する。
 
+### 3.8 transition ブロック（遷移矢印）
+
+必須：`from`, `to`
+任意：`fromoffset`, `date`
+
+例：
+
+```
+transition:
+  from:1501
+  to:1506
+  fromoffset:0,-10
+```
+
+* `from`/`to`：接続するnode id
+* 線は `from` 指定ノードの**中央 x** と、`to` 指定ノードの**上辺中央**を結ぶ**水平矢印**
+  * `from` の y 座標は `to` の y 座標に合わせる
+* `fromoffset:x,y` を指定した場合は `from` 側座標に加算する
+* `date` を指定した場合は `to` の上辺ではなく指定日付位置を使用する
+  * `to` の y 座標も指定日付位置になる（`fromoffset` はその位置を基準に適用）
+
 ---
 
 ## 4. 日付（year）表現の仕様
