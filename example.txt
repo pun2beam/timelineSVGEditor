@@ -770,7 +770,7 @@ node:
 
 node:
   id:2420
-  column:17
+  column:21
   type:box
   date:2010.4.10
   end:2012.11.13
@@ -778,7 +778,7 @@ node:
 
 node:
   id:2420
-  column:17
+  column:21
   type:box
   date:2012.11.13
   end:2012.11.17
@@ -786,7 +786,7 @@ node:
 
 node:
   id:2421
-  column:19
+  column:23
   type:box
   date:2011.12.28
   end:*
@@ -900,7 +900,7 @@ node:
   text:みどりの風
 
 node:
-  id:2439
+  id:2440
   column:13
   type:box
   date:2017.9.25
@@ -908,7 +908,7 @@ node:
   text:希望の党
 
 node:
-  id:2439
+  id:2441
   column:13
   type:box
   date:2018.5.7
@@ -916,7 +916,7 @@ node:
   text:希望の党
 
 node:
-  id:2439
+  id:2442
   column:12
   type:box
   date:2018.5.7
@@ -924,7 +924,7 @@ node:
   text:国民党
 
 node:
-  id:2439
+  id:2443
   column:9
   type:box
   date:2017.10.3
@@ -932,7 +932,7 @@ node:
   text:立憲民主党
 
 node:
-  id:2439
+  id:2444
   column:10
   type:box
   date:2018.5.7
@@ -940,7 +940,7 @@ node:
   text:国民民主党
 
 node:
-  id:2439
+  id:2445
   column:10
   type:box
   date:2020.9.11
@@ -948,7 +948,7 @@ node:
   text:国民民主党
 
 node:
-  id:2439
+  id:2446
   column:9
   type:box
   date:2020.9.15
@@ -956,11 +956,147 @@ node:
   text:立憲民主党
 
 node:
-  id:2439
+  id:2447
   column:9
   type:box
   date:2026.1.16
   end:*
   text:中道改革連合
+
+node:
+  id:2448
+  column:9
+  type:box
+  date:2026.1.16
+  end:*
+  text:中道改革連合
+
+node:
+  id:2449
+  column:11
+  type:box
+  date:2023.12.14
+  end:2024.10.10
+  text:教育無償化を実現する会
+
+node:
+  id:2450
+  column:18
+  type:box
+  date:2010.4.18
+  end:2012.9.29
+  text:日本創新党
+
+node:
+  id:2451
+  column:20
+  type:box
+  date:2010.4.19
+  end:*
+  text:大阪維新の会
+
+node:
+  id:2452
+  column:17
+  type:box
+  date:2012.9.28
+  end:2014.7.31
+  text:日本維新の会
+
+node:
+  id:2453
+  column:17
+  type:box
+  date:2014.8.1
+  end:2016.3.27
+  text:維新の党
+
+node:
+  id:2454
+  column:18
+  type:box
+  date:2015.11.2
+  end:2016.8.23
+  text:おおさか維新の会
+
+node:
+  id:2455
+  column:18
+  type:box
+  date:2016.8.23
+  end:*
+  text:日本維新の会
+
+node:
+  id:2456
+  column:16
+  type:box
+  date:2015.12.21
+  end:2016.3.25
+  text:改革結集の会
+
+node:
+  id:2457
+  column:19
+  type:box
+  date:2014.8.1
+  end:2015.12.21
+  text:次世代の党
+
+node:
+  id:2458
+  column:19
+  type:box
+  date:2015.12.21
+  end:2018.11.1
+  text:日本のこころを大切..
+
+node:
+  id:2459
+  column:9
+  type:box
+  date:2012.11.22
+  end:2012.11.27
+  text:減税日本・反TPP
+
+node:
+  id:2460
+  column:14
+  type:box
+  date:2021.2.9
+  end:*
+  text:NHKから国民を守る党
+
+node:
+  id:2461
+  column:19
+  type:box
+  date:2020.4.11
+  end:*
+  text:参政党
+
+node:
+  id:2462
+  column:21
+  type:box
+  date:2023.10.17
+  end:*
+  text:日本保守党
+
+node:
+  id:2463
+  column:12
+  type:box
+  date:2026.1.25
+  end:*
+  text:減税日本・ゆうこく連合
+
+node:
+  id:2463
+  column:16
+  type:box
+  date:2025.5.8
+  end:*
+  text:チームみらい
 
 
