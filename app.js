@@ -617,7 +617,7 @@ function layout(model) {
     .filter(Boolean);
 
   if (isNodeBoxLastOn && scaleColumn) {
-    const lastYBase = DEFAULTS.topMargin + (endYear - startYear) * rowHeight;
+    const lastYBase = DEFAULTS.topMargin + (endYear + 1 - startYear) * rowHeight;
     nodes
       .filter((node) => node.type === "box" && node.endRaw)
       .forEach((node) => {
