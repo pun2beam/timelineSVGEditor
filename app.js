@@ -395,6 +395,7 @@ function normalizeModel(raw, parseErrors) {
       color: node.color,
       bgColor: node.bgcolor,
       borderColor: node.bordercolor,
+      borderDasharray: node.borderdasharray,
       fontSize: node.fontsize,
       padding: node.padding,
       align: node.align,
@@ -751,8 +752,11 @@ function renderSvg(layoutModel) {
       });
       svgParts.push(`</text>`);
     } else {
+      const dashArrayAttr = node.borderDasharray
+        ? ` stroke-dasharray="${node.borderDasharray}"`
+        : "";
       svgParts.push(
-        `<rect x="${node.x}" y="${node.y}" width="${node.width}" height="${node.height}" rx="4" fill="${bgColor}" stroke="${borderColor}" />`,
+        `<rect x="${node.x}" y="${node.y}" width="${node.width}" height="${node.height}" rx="4" fill="${bgColor}" stroke="${borderColor}"${dashArrayAttr} />`,
       );
       const padding = DEFAULTS.nodePadding;
       const maxTextWidth = Math.max(node.width - padding * 2, 10);
