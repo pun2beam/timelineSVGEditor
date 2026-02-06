@@ -1,5 +1,6 @@
 defaults:
   node.box.height:40px
+  node.box.last:on
 
 column:
   id:1
