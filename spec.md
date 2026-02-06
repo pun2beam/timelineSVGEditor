@@ -175,12 +175,13 @@ defaults:
 
 ```
 transition:
-  from:1501
-  to:1506
+  from:1501,1502
+  to:1506,1507
   fromoffset:0,-10
 ```
 
-* `from`/`to`：接続するnode id
+* `from`/`to`：接続するnode id（`,` 区切りで複数指定可能）
+  * 複数指定時は `from` と `to` の全組み合わせで矢印を描画
 * 線は `from` 指定ノードの**中央 x** と、`to` 指定ノードの**上辺中央**を結ぶ**水平矢印**
   * `from` の y 座標は `to` の y 座標に合わせる
 * `fromoffset:x,y` を指定した場合は `from` 側座標に加算する
