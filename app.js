@@ -177,6 +177,16 @@ function parseNumberWithUnit(value, line, errors, label) {
   return px;
 }
 
+function parseOffset(value, line, errors) {
+  if (!value) return null;
+  const match = value.trim().match(/^(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)$/);
+  if (!match) {
+    errors.push({ line, message: `offsetの形式が不正です: ${value}` });
+    return null;
+  }
+  return { x: Number(match[1]), y: Number(match[2]) };
+}
+
 function parseDateString(raw) {
   if (!raw) return null;
   const trimmed = raw.trim();
@@ -372,6 +382,7 @@ function normalizeModel(raw, parseErrors) {
         }
       }
     }
+    const offset = node.offset ? parseOffset(node.offset, node.line, errors) : null;
     model.nodes.push({
       id: Number(node.id),
       columnId: Number(node.column),
@@ -379,6 +390,7 @@ function normalizeModel(raw, parseErrors) {
       dateValue,
       endRaw,
       endDateValue,
+      offset,
       text: node.text,
       color: node.color,
       bgColor: node.bgcolor,
@@ -506,10 +518,12 @@ function layout(model) {
       const height = node.type === "box" && defaultNodeBoxHeight !== null
         ? defaultNodeBoxHeight
         : rowHeight * 0.9;
+      const offsetX = node.offset?.x ?? 0;
+      const offsetY = node.offset?.y ?? 0;
       return {
         ...node,
-        x: column.xCenter - width / 2,
-        y,
+        x: column.xCenter - width / 2 + offsetX,
+        y: y + offsetY,
         width,
         height,
       };

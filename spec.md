@@ -104,6 +104,7 @@ node:
 * `date`：日時指定（後述）
 * `text`：表示文字列
 * 任意：`color`, `bgcolor`, `bordercolor`, `fontsize`, `padding`, `align`
+* 任意：`offset`（`x,y` 形式でpx指定。座標に加算して微調整）
 
 ### 3.5 band ブロック（期間帯）
 
@@ -209,7 +210,7 @@ defaults:
     { id, type, widthPx, rowHeightPx, period: {startYear, endYear} }
   ],
   nodes: [
-    { id, columnId, type, dateValue, text, style... }
+    { id, columnId, type, dateValue, offset, text, style... }
   ],
   bands: [
     { id, columnId, startDateValue, endDateValue, text, style... }
@@ -252,6 +253,7 @@ defaults:
 * boxの幅：その列幅の 90%（左右margin 5%ずつ）または固定 `nodeWidth`（仕様固定案：列幅-8px）
 * boxの高さ：`defaults.node.box.height` が指定されていればその値、なければ `minHeight = rowHeight*0.9`
 * boxのy：指定日付の `y(dateValue)` を中心（または上端）にする
+* `offset` 指定時は `x` と `y` に加算して位置をずらす
 
   * 仕様固定案：**中心合わせ**（boxCenterY = y(date))
 
