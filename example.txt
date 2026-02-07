@@ -9,11 +9,13 @@ column:
   width:30pt
   rowheight:70pt
   period:1990-2026
+  title:西暦
 
 column:
   id:2
   type:base
   width:20pt
+  title:与党
 
 column:
   id:3

@@ -59,7 +59,7 @@
 ### 3.3 column ブロック
 
 必須：`type`, `width`
-任意：`rowheight`, `period`
+任意：`rowheight`, `period`, `title`
 
 例：
 
@@ -70,6 +70,7 @@ column:
   width:20pt
   rowheight:20pt
   period:1990-2026
+  title:西暦
 ```
 
 * `id`：省略可能。省略時は出現順で 1..N を付与
@@ -83,6 +84,7 @@ column:
 
   * 形式：`YYYY-YYYY`（例：1990-2026）
   * `type:year` の column に必須（この列がタイムスケール定義者）
+* `title`：列見出しとして表示するテキスト
 
 ### 3.4 node ブロック
 
