@@ -1,7 +1,7 @@
 defaults:
   node.box.height:40px
   node.box.last:on
-  node.id.visible:on
+  node.id.visible:off
 
 column:
   id:1
@@ -1369,6 +1369,11 @@ transition:
   from:2459
   to:2435
   fromoffset:0,0
+
+transition:
+  from:2430
+  to:2440
+  fromoffset:0,-10
 
 band:
   id:1000
