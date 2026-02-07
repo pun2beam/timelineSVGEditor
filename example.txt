@@ -1495,11 +1495,29 @@ band:
 band:
   id:1013
   column:6
-  date:1993.7.18-1996.10.20
+  date:1993.7.18-1996.1
   text:70
   color:#ffffff
   bgcolor:#000000
   width:11.67
+
+band:
+  id:1013
+  column:6
+  date:1996.1-1996.10.20
+  text:30
+  color:#ffffff
+  bgcolor:#000000
+  width:5
+
+band:
+  id:1013
+  column:7
+  date:1995.12.22-1996.9.28
+  text:10
+  color:#ffffff
+  bgcolor:#000000
+  width:1.66
 
 band:
   id:1014
