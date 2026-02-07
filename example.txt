@@ -1,6 +1,7 @@
 defaults:
   node.box.height:40px
   node.box.last:on
+  node.id.visible:on
 
 column:
   id:1
@@ -509,7 +510,7 @@ node:
 
 node:
   id:2100
-  column:17
+  column:18
   type:box
   date:1993.6.23
   end:1994.12.9
@@ -598,7 +599,7 @@ node:
 
 node:
   id:2402
-  column:15
+  column:17
   type:box
   date:1992.5.22
   end:1994.12.9
@@ -622,7 +623,7 @@ node:
 
 node:
   id:2405
-  column:15
+  column:17
   type:box
   date:1994.12.10
   end:1997.12.27
@@ -1368,3 +1369,841 @@ transition:
   from:2459
   to:2435
   fromoffset:0,0
+
+band:
+  id:1000
+  column:25
+  date:1990.1.1-1990.2.18
+  text:300
+  color:#ffffff
+  bgcolor:#000000
+  width:50
+
+band:
+  id:1001
+  column:6
+  date:1990.1.1-1990.2.18
+  text:85
+  color:#ffffff
+  bgcolor:#000000
+  width:14.17
+
+band:
+  id:1002
+  column:24
+  date:1990.1.1-1990.2.18
+  text:56
+  color:#ffffff
+  bgcolor:#000000
+  width:9.33
+
+band:
+  id:1003
+  column:13
+  date:1990.1.1-1990.2.18
+  text:26
+  color:#ffffff
+  bgcolor:#000000
+  width:4.33
+
+band:
+  id:1004
+  column:5
+  date:1990.1.1-1990.2.18
+  text:26
+  color:#ffffff
+  bgcolor:#000000
+  width:4.33
+
+band:
+  id:1005
+  column:14
+  date:1990.1.1-1990.2.18
+  text:4
+  color:#ffffff
+  bgcolor:#000000
+  width:0.67
+
+band:
+  id:1006
+  column:25
+  date:1990.2.18-1993.7.18
+  text:275
+  color:#ffffff
+  bgcolor:#000000
+  width:45.83
+
+band:
+  id:1007
+  column:6
+  date:1990.2.18-1993.7.18
+  text:136
+  color:#ffffff
+  bgcolor:#000000
+  width:22.67
+
+band:
+  id:1008
+  column:24
+  date:1990.2.18-1993.7.18
+  text:45
+  color:#ffffff
+  bgcolor:#000000
+  width:7.5
+
+band:
+  id:1009
+  column:13
+  date:1990.2.18-1993.7.18
+  text:14
+  color:#ffffff
+  bgcolor:#000000
+  width:2.33
+
+band:
+  id:1010
+  column:5
+  date:1990.2.18-1993.7.18
+  text:16
+  color:#ffffff
+  bgcolor:#000000
+  width:2.67
+
+band:
+  id:1011
+  column:14
+  date:1990.2.18-1993.7.18
+  text:4
+  color:#ffffff
+  bgcolor:#000000
+  width:0.67
+
+band:
+  id:1012
+  column:25
+  date:1993.7.18-1996.10.20
+  text:223
+  color:#ffffff
+  bgcolor:#000000
+  width:37.17
+
+band:
+  id:1013
+  column:6
+  date:1993.7.18-1996.10.20
+  text:70
+  color:#ffffff
+  bgcolor:#000000
+  width:11.67
+
+band:
+  id:1014
+  column:24
+  date:1993.7.18-1994.12.5
+  text:51
+  color:#ffffff
+  bgcolor:#000000
+  width:8.5
+
+band:
+  id:1015
+  column:13
+  date:1993.7.18-1994.12.9
+  text:15
+  color:#ffffff
+  bgcolor:#000000
+  width:2.5
+
+band:
+  id:1016
+  column:5
+  date:1993.7.18-1996.10.20
+  text:15
+  color:#ffffff
+  bgcolor:#000000
+  width:2.5
+
+band:
+  id:1017
+  column:12
+  date:1993.7.18-1996.10.20
+  text:13
+  color:#ffffff
+  bgcolor:#000000
+  width:2.17
+
+band:
+  id:1018
+  column:18
+  date:1993.7.18-1994.12.9
+  text:55
+  color:#ffffff
+  bgcolor:#000000
+  width:9.17
+
+band:
+  id:1019
+  column:17
+  date:1993.7.18-1994.12.9
+  text:35
+  color:#ffffff
+  bgcolor:#000000
+  width:5.83
+
+band:
+  id:1021
+  column:14
+  date:1993.7.18-1994.5.25
+  text:4
+  color:#ffffff
+  bgcolor:#000000
+  width:0.67
+
+band:
+  id:1022
+  column:25
+  date:1996.10.20-2000.6.25
+  text:239
+  color:#ffffff
+  bgcolor:#000000
+  width:39.83
+
+band:
+  id:1023
+  column:5
+  date:1996.10.20-2000.6.25
+  text:26
+  color:#ffffff
+  bgcolor:#000000
+  width:4.33
+
+band:
+  id:1024
+  column:12
+  date:1996.10.20-2000.6.25
+  text:2
+  color:#ffffff
+  bgcolor:#000000
+  width:0.33
+
+band:
+  id:1025
+  column:17
+  date:1996.10.20-1997.12.27
+  text:156
+  color:#ffffff
+  bgcolor:#000000
+  width:26
+
+band:
+  id:1026
+  column:11
+  date:1996.10.20-1998.4.27
+  text:52
+  color:#ffffff
+  bgcolor:#000000
+  width:8.67
+
+band:
+  id:1027
+  column:6
+  date:1996.10.20-2000.6.25
+  text:15
+  color:#ffffff
+  bgcolor:#000000
+  width:2.5
+
+band:
+  id:1028
+  column:25
+  date:2000.6.25-2003.11.9
+  text:233
+  color:#ffffff
+  bgcolor:#000000
+  width:38.83
+
+band:
+  id:1029
+  column:24
+  date:2000.6.25-2003.11.9
+  text:31
+  color:#ffffff
+  bgcolor:#000000
+  width:5.17
+
+band:
+  id:1030
+  column:5
+  date:2000.6.25-2003.11.9
+  text:20
+  color:#ffffff
+  bgcolor:#000000
+  width:3.33
+
+band:
+  id:1031
+  column:11
+  date:2000.6.25-2003.11.9
+  text:127
+  color:#ffffff
+  bgcolor:#000000
+  width:21.17
+
+band:
+  id:1032
+  column:6
+  date:2000.6.25-2003.11.9
+  text:19
+  color:#ffffff
+  bgcolor:#000000
+  width:3.17
+
+band:
+  id:1033
+  column:17
+  date:2000.6.25-2003.11.9
+  text:22
+  color:#ffffff
+  bgcolor:#000000
+  width:3.67
+
+band:
+  id:1034
+  column:19
+  date:2000.6.25-2003.11.9
+  text:7
+  color:#ffffff
+  bgcolor:#000000
+  width:1.17
+
+band:
+  id:1035
+  column:25
+  date:2003.11.9-2005.9.11
+  text:239
+  color:#ffffff
+  bgcolor:#000000
+  width:39.83
+
+band:
+  id:1036
+  column:24
+  date:2003.11.9-2005.9.11
+  text:34
+  color:#ffffff
+  bgcolor:#000000
+  width:5.67
+
+band:
+  id:1037
+  column:5
+  date:2003.11.9-2005.9.11
+  text:9
+  color:#ffffff
+  bgcolor:#000000
+  width:1.5
+
+band:
+  id:1038
+  column:11
+  date:2003.11.9-2005.9.11
+  text:117
+  color:#ffffff
+  bgcolor:#000000
+  width:19.5
+
+band:
+  id:1039
+  column:6
+  date:2003.11.9-2005.9.11
+  text:6
+  color:#ffffff
+  bgcolor:#000000
+  width:1
+
+band:
+  id:1040
+  column:19
+  date:2003.11.9-2005.9.11
+  text:4
+  color:#ffffff
+  bgcolor:#000000
+  width:0.67
+
+band:
+  id:1041
+  column:25
+  date:2005.9.11-2009.8.30
+  text:296
+  color:#ffffff
+  bgcolor:#000000
+  width:49.33
+
+band:
+  id:1042
+  column:24
+  date:2005.9.11-2009.8.30
+  text:31
+  color:#ffffff
+  bgcolor:#000000
+  width:5.17
+
+band:
+  id:1043
+  column:5
+  date:2005.9.11-2009.8.30
+  text:9
+  color:#ffffff
+  bgcolor:#000000
+  width:1.5
+
+band:
+  id:1044
+  column:11
+  date:2005.9.11-2009.8.30
+  text:113
+  color:#ffffff
+  bgcolor:#000000
+  width:18.83
+
+band:
+  id:1045
+  column:6
+  date:2005.9.11-2009.8.30
+  text:7
+  color:#ffffff
+  bgcolor:#000000
+  width:1.17
+
+band:
+  id:1046
+  column:15
+  date:2005.9.11-2009.8.30
+  text:4
+  color:#ffffff
+  bgcolor:#000000
+  width:0.67
+
+band:
+  id:1047
+  column:25
+  date:2009.8.30-2012.12.16
+  text:119
+  color:#ffffff
+  bgcolor:#000000
+  width:19.83
+
+band:
+  id:1048
+  column:24
+  date:2009.8.30-2012.12.16
+  text:21
+  color:#ffffff
+  bgcolor:#000000
+  width:3.5
+
+band:
+  id:1049
+  column:5
+  date:2009.8.30-2012.12.16
+  text:9
+  color:#ffffff
+  bgcolor:#000000
+  width:1.5
+
+band:
+  id:1050
+  column:11
+  date:2009.8.30-2012.12.16
+  text:308
+  color:#ffffff
+  bgcolor:#000000
+  width:51.33
+
+band:
+  id:1051
+  column:6
+  date:2009.8.30-2012.12.16
+  text:7
+  color:#ffffff
+  bgcolor:#000000
+  width:1.17
+
+band:
+  id:1052
+  column:13
+  date:2009.8.30-2012.12.16
+  text:5
+  color:#ffffff
+  bgcolor:#000000
+  width:0.83
+
+band:
+  id:1053
+  column:15
+  date:2009.8.30-2012.12.16
+  text:3
+  color:#ffffff
+  bgcolor:#000000
+  width:0.5
+
+band:
+  id:1054
+  column:25
+  date:2012.12.16-2014.12.14
+  text:294
+  color:#ffffff
+  bgcolor:#000000
+  width:49
+
+band:
+  id:1055
+  column:24
+  date:2012.12.16-2014.12.14
+  text:31
+  color:#ffffff
+  bgcolor:#000000
+  width:5.17
+
+band:
+  id:1056
+  column:5
+  date:2012.12.16-2014.12.14
+  text:8
+  color:#ffffff
+  bgcolor:#000000
+  width:1.33
+
+band:
+  id:1057
+  column:11
+  date:2012.12.16-2014.12.14
+  text:57
+  color:#ffffff
+  bgcolor:#000000
+  width:9.5
+
+band:
+  id:1058
+  column:17
+  date:2012.12.16-2014.12.14
+  text:53
+  color:#ffffff
+  bgcolor:#000000
+  width:8.83
+
+band:
+  id:1059
+  column:13
+  date:2012.12.16-2014.12.14
+  text:18
+  color:#ffffff
+  bgcolor:#000000
+  width:3
+
+band:
+  id:1060
+  column:8
+  date:2012.12.16-2014.12.14
+  text:9
+  color:#ffffff
+  bgcolor:#000000
+  width:1.5
+
+band:
+  id:1061
+  column:25
+  date:2014.12.14-2017.10.22
+  text:291
+  color:#ffffff
+  bgcolor:#000000
+  width:48.5
+
+band:
+  id:1062
+  column:24
+  date:2014.12.14-2017.10.22
+  text:35
+  color:#ffffff
+  bgcolor:#000000
+  width:5.83
+
+band:
+  id:1063
+  column:5
+  date:2014.12.14-2017.10.22
+  text:21
+  color:#ffffff
+  bgcolor:#000000
+  width:3.5
+
+band:
+  id:1064
+  column:11
+  date:2014.12.14-2017.10.22
+  text:73
+  color:#ffffff
+  bgcolor:#000000
+  width:12.17
+
+band:
+  id:1065
+  column:17
+  date:2014.12.14-2016.3.27
+  text:41
+  color:#ffffff
+  bgcolor:#000000
+  width:6.83
+
+band:
+  id:1066
+  column:25
+  date:2017.10.22-2021.10.31
+  text:284
+  color:#ffffff
+  bgcolor:#000000
+  width:47.33
+
+band:
+  id:1067
+  column:24
+  date:2017.10.22-2021.10.31
+  text:29
+  color:#ffffff
+  bgcolor:#000000
+  width:4.83
+
+band:
+  id:1068
+  column:5
+  date:2017.10.22-2021.10.31
+  text:12
+  color:#ffffff
+  bgcolor:#000000
+  width:2
+
+band:
+  id:1069
+  column:18
+  date:2017.10.22-2021.10.31
+  text:11
+  color:#ffffff
+  bgcolor:#000000
+  width:1.83
+
+band:
+  id:1070
+  column:9
+  date:2017.10.22-2020.9.14
+  text:55
+  color:#ffffff
+  bgcolor:#000000
+  width:9.17
+
+band:
+  id:1071
+  column:15
+  date:2017.10.22-2018.5.7
+  text:50
+  color:#ffffff
+  bgcolor:#000000
+  width:8.33
+
+band:
+  id:1072
+  column:25
+  date:2021.10.31-2024.10.27
+  text:261
+  color:#ffffff
+  bgcolor:#000000
+  width:43.5
+
+band:
+  id:1073
+  column:24
+  date:2021.10.31-2024.10.27
+  text:32
+  color:#ffffff
+  bgcolor:#000000
+  width:5.33
+
+band:
+  id:1074
+  column:5
+  date:2021.10.31-2024.10.27
+  text:10
+  color:#ffffff
+  bgcolor:#000000
+  width:1.67
+
+band:
+  id:1075
+  column:18
+  date:2021.10.31-2024.10.27
+  text:41
+  color:#ffffff
+  bgcolor:#000000
+  width:6.83
+
+band:
+  id:1076
+  column:9
+  date:2021.10.31-2024.10.27
+  text:96
+  color:#ffffff
+  bgcolor:#000000
+  width:16
+
+band:
+  id:1077
+  column:11
+  date:2021.10.31-2024.10.27
+  text:11
+  color:#ffffff
+  bgcolor:#000000
+  width:1.83
+
+band:
+  id:1078
+  column:7
+  date:2021.10.31-2024.10.27
+  text:3
+  color:#ffffff
+  bgcolor:#000000
+  width:0.5
+
+band:
+  id:1079
+  column:25
+  date:2024.10.27-2026.12.31
+  text:191
+  color:#ffffff
+  bgcolor:#000000
+  width:31.83
+
+band:
+  id:1080
+  column:24
+  date:2024.10.27-2026.12.31
+  text:24
+  color:#ffffff
+  bgcolor:#000000
+  width:4
+
+band:
+  id:1081
+  column:5
+  date:2024.10.27-2026.12.31
+  text:8
+  color:#ffffff
+  bgcolor:#000000
+  width:1.33
+
+band:
+  id:1082
+  column:18
+  date:2024.10.27-2026.12.31
+  text:38
+  color:#ffffff
+  bgcolor:#000000
+  width:6.33
+
+band:
+  id:1083
+  column:9
+  date:2024.10.27-2026.12.31
+  text:148
+  color:#ffffff
+  bgcolor:#000000
+  width:24.67
+
+band:
+  id:1084
+  column:11
+  date:2024.10.27-2026.12.31
+  text:28
+  color:#ffffff
+  bgcolor:#000000
+  width:4.67
+
+band:
+  id:1085
+  column:7
+  date:2024.10.27-2026.12.31
+  text:9
+  color:#ffffff
+  bgcolor:#000000
+  width:1.5
+
+band:
+  id:1086
+  column:17
+  date:1994.12.10-1996.10.20
+  text:178
+  color:#ffffff
+  bgcolor:#000000
+  width:29.66
+
+band:
+  id:1087
+  column:11
+  date:1998.4.27-2000.6.25
+  text:95
+  color:#ffffff
+  bgcolor:#000000
+  width:15.83
+
+band:
+  id:1088
+  column:11
+  date:2018.5.7-2020.9.11
+  text:40
+  color:#ffffff
+  bgcolor:#000000
+  width:6.66
+
+
+band:
+  id:1087
+  column:17
+  date:1998.4.27-2000.6.25
+  text:18
+  color:#ffffff
+  bgcolor:#000000
+  width:3
+
+band:
+  id:1089
+  column:11
+  date:2020.9.11-2021.10.31
+  text:8
+  color:#ffffff
+  bgcolor:#000000
+  width:1.666
+
+band:
+  id:1090
+  column:9
+  date:2020.9.14-2021.10.31
+  text:109
+  color:#ffffff
+  bgcolor:#000000
+  width:18.16
+
+band:
+  id:1091
+  column:24
+  date:1998.11.7-2000.6.25
+  text:42
+  color:#ffffff
+  bgcolor:#000000
+  width:18.16
+
+band:
+  id:1092
+  column:19
+  date:1998-1998.11.7
+  text:37
+  color:#ffffff
+  bgcolor:#000000
+  width:6.16
