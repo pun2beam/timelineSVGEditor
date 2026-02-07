@@ -394,6 +394,7 @@ function normalizeModel(raw, parseErrors) {
       widthPx,
       rowHeightPx,
       period,
+      title: column.title,
     });
   });
 
@@ -974,6 +975,17 @@ function renderSvg(layoutModel) {
         `<text x="${column.xCenter}" y="${line.y + 12}" text-anchor="middle" font-size="12" fill="#6b7280">${line.year}</text>`,
       );
     });
+  });
+
+  const columnTitleY = DEFAULTS.topMargin / 2;
+  columns.forEach((column) => {
+    if (!column.title) return;
+    svgParts.push(
+      `<text x="${column.xCenter}" y="${columnTitleY}" text-anchor="middle" dominant-baseline="middle" font-size="12" fill="#111">${truncateText(
+        column.title,
+        12,
+      )}</text>`,
+    );
   });
 
   svgParts.push(`</g></svg>`);
