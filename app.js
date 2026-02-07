@@ -740,7 +740,8 @@ function layout(model) {
       .filter((node) => node.type === "box" && node.endRaw)
       .forEach((node) => {
         const reachesEnd =
-          node.endRaw === "*" || (node.endDateValue !== null && node.endDateValue >= endYear);
+          node.endRaw === "*" ||
+          (node.endDateValue !== null && node.endDateValue >= endYear + 1);
         if (!reachesEnd) return;
         const offsetY = node.offset?.y ?? 0;
         maxLastBoxBottom = Math.max(maxLastBoxBottom, lastYBase + offsetY + node.height);
