@@ -1,8 +1,6 @@
 defaults:
   node.box.height:40px
   node.box.last:on
-  node.id.visible:on
-
 
 column:
   id:1
@@ -892,7 +890,7 @@ node:
 
 node:
   id:2439
-  column:14
+  column:10
   type:box
   date:2012.11.15
   end:2013.12.31
@@ -1099,6 +1097,14 @@ node:
   end:*
   text:新党大地
   borderdasharray:2
+
+node:
+  id:2465
+  column:7
+  type:box
+  date:2019.4.1
+  end:*
+  text:れいわ新撰組
 
 transition:
   from:1501
@@ -1346,3 +1352,19 @@ transition:
   to:2455
   tooffset:0,10
   date:2024.10.10
+
+transition:
+  from:2438
+  to:2444
+  tooffset:0,10
+  date:2019.4.26
+
+transition:
+  from:2438
+  to:2465
+  fromoffset:0,-10
+
+transition:
+  from:2459
+  to:2435
+  fromoffset:0,0
