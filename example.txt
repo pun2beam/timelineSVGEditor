@@ -1375,6 +1375,11 @@ transition:
   to:2440
   fromoffset:0,-10
 
+transition:
+  from:2303
+  to:2447
+  fromoffset:0,-10
+
 band:
   id:1000
   column:25
@@ -2098,7 +2103,7 @@ band:
 band:
   id:1079
   column:25
-  date:2024.10.27-2026.12.31
+  date:2024.10.27-2026.2.7
   text:191
   color:#ffffff
   bgcolor:#000000
@@ -2107,7 +2112,7 @@ band:
 band:
   id:1080
   column:24
-  date:2024.10.27-2026.12.31
+  date:2024.10.27-2026.1.16
   text:24
   color:#ffffff
   bgcolor:#000000
@@ -2116,7 +2121,7 @@ band:
 band:
   id:1081
   column:5
-  date:2024.10.27-2026.12.31
+  date:2024.10.27-2026.2.7
   text:8
   color:#ffffff
   bgcolor:#000000
@@ -2125,7 +2130,7 @@ band:
 band:
   id:1082
   column:18
-  date:2024.10.27-2026.12.31
+  date:2024.10.27-2026.2.7
   text:38
   color:#ffffff
   bgcolor:#000000
@@ -2134,7 +2139,7 @@ band:
 band:
   id:1083
   column:9
-  date:2024.10.27-2026.12.31
+  date:2024.10.27-2026.2.7
   text:148
   color:#ffffff
   bgcolor:#000000
@@ -2143,7 +2148,7 @@ band:
 band:
   id:1084
   column:11
-  date:2024.10.27-2026.12.31
+  date:2024.10.27-2026.2.7
   text:28
   color:#ffffff
   bgcolor:#000000
@@ -2152,7 +2157,7 @@ band:
 band:
   id:1085
   column:7
-  date:2024.10.27-2026.12.31
+  date:2024.10.27-2026.2.7
   text:9
   color:#ffffff
   bgcolor:#000000
