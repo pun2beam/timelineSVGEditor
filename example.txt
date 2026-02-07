@@ -1104,7 +1104,7 @@ node:
   type:box
   date:2019.4.1
   end:*
-  text:れいわ新撰組
+  text:れいわ新選組
 
 transition:
   from:1501
