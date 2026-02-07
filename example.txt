@@ -21,16 +21,19 @@ column:
   id:3
   type:base
   width:100pt
+  title:内閣
 
 column:
   id:4
   type:base
   width:100pt
+  title:できごと(INPUT)
 
 column:
   id:5
   type:base
   width:100pt
+  title:対応(OUTPUT)
 
 column:
   id:6
