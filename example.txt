@@ -487,7 +487,7 @@ node:
 
 node:
   id:2004
-  column:11
+  column:12
   type:box
   date:1993.6.21
   end:2002.1.16
@@ -495,41 +495,19 @@ node:
 
 node:
   id:2005
-  column:11
+  column:12
   type:box
   date:1998.7
   text:さきがけ
 
 node:
   id:2006
-  column:11
+  column:12
   type:box
   date:2002.1.16
   end:2004.10.31
   text:みどりの会議
-
-node:
-  id:2007
-  column:11
-  type:box
-  date:2005.2.13
-  end:2008.11.22
-  text:みどりのテーブル
-
-node:
-  id:2008
-  column:11
-  type:box
-  date:2008.11.22
-  end:2012.7.28
-  text:みどりの未来
-
-node:
-  id:2009
-  column:11
-  type:box
-  date:2012.7.28
-  text:緑の党
+  borderdasharray:2
 
 node:
   id:2100
@@ -543,33 +521,34 @@ node:
   id:2101
   column:19
   type:box
+  date:1994.1
+  end:1994.12.9
+  text:改革の会
+
+node:
+  id:2102
+  column:20
+  type:box
   date:1994.4.18
   end:1994.12.9
   text:新党みらい
 
 node:
-  id:2102
-  column:20
+  id:2103
+  column:21
   type:box
   date:1994.4.20
   end:1994.12.9
   text:(柿澤)自由党
 
 node:
-  id:2103
-  column:21
+  id:2104
+  column:22
   type:box
   date:1994.7.15
   end:1994.12.9
   text:高志会
 
-node:
-  id:2104
-  column:22
-  type:box
-  date:1994.1
-  end:1994.12.9
-  text:改革の会
 
 node:
   id:2200
@@ -629,7 +608,7 @@ node:
 
 node:
   id:2403
-  column:12
+  column:10
   type:box
   date:1989.6.9
   end:1993.1.20
@@ -637,7 +616,7 @@ node:
 
 node:
   id:2404
-  column:12
+  column:10
   type:box
   date:1993.1.20
   end:1998.4.27
@@ -717,7 +696,7 @@ node:
 
 node:
   id:2414
-  column:18
+  column:19
   type:box
   date:2000.4.3
   end:2002.12.25
@@ -725,7 +704,7 @@ node:
 
 node:
   id:2415
-  column:18
+  column:19
   type:box
   date:2002.12.25
   end:2003.11.21
@@ -733,7 +712,7 @@ node:
 
 node:
   id:2416
-  column:10
+  column:11
   type:box
   date:1996.9.29
   end:1998.4.27
@@ -741,7 +720,7 @@ node:
 
 node:
   id:2417
-  column:10
+  column:11
   type:box
   date:1998.4.27
   end:2016.3.27
@@ -764,7 +743,7 @@ node:
   text:国民新党
 
 node:
-  id:2419
+  id:2420
   column:16
   type:box
   date:2005.8.21
@@ -772,7 +751,7 @@ node:
   text:新党日本
 
 node:
-  id:2420
+  id:2421
   column:21
   type:box
   date:2010.4.10
@@ -780,23 +759,23 @@ node:
   text:たちあがれ日本
 
 node:
-  id:2420
+  id:2422
   column:21
   type:box
   date:2012.11.13
   end:2012.11.17
-  text:太陽の党
+  text:太陽の党\n(第1期)
 
 node:
-  id:2421
+  id:2423
   column:23
   type:box
   date:2011.12.28
-  end:*
+  end:2013.7.21
   text:新党大地
 
 node:
-  id:2422
+  id:2424
   column:13
   type:box
   date:2009.8.8
@@ -804,7 +783,7 @@ node:
   text:みんなの党
 
 node:
-  id:2423
+  id:2425
   column:15
   type:box
   date:2013.12.18
@@ -812,17 +791,34 @@ node:
   text:結いの党
 
 node:
-  id:2424
-  column:11
+  id:2426
+  column:13
   type:box
   date:2015.1.8
   end:2018.12.10
   text:日本を元気にする会
 
+node:
+  id:2427
+  column:21
+  type:box
+  date:2014.9.25
+  end:2014.11.26
+  text:太陽の党\n(第2期)
+
+node:
+  id:2428
+  column:21
+  type:box
+  date:2015.1.1
+  end:2015.4.30
+  text:太陽の党\n(第3期)
+  offset:0,10
+
 
 node:
   id:2430
-  column:10
+  column:11
   type:box
   date:2016.3.27
   end:2018.5.7
@@ -904,7 +900,7 @@ node:
 
 node:
   id:2440
-  column:13
+  column:15
   type:box
   date:2017.9.25
   end:2018.5.7
@@ -912,7 +908,7 @@ node:
 
 node:
   id:2441
-  column:13
+  column:15
   type:box
   date:2018.5.7
   end:2021.10.1
@@ -920,7 +916,7 @@ node:
 
 node:
   id:2442
-  column:12
+  column:14
   type:box
   date:2018.5.7
   end:2018.5.7
@@ -936,7 +932,7 @@ node:
 
 node:
   id:2444
-  column:10
+  column:11
   type:box
   date:2018.5.7
   end:2020.9.11
@@ -944,7 +940,7 @@ node:
 
 node:
   id:2445
-  column:10
+  column:11
   type:box
   date:2020.9.11
   end:*
@@ -967,16 +963,8 @@ node:
   text:中道改革連合
 
 node:
-  id:2448
-  column:9
-  type:box
-  date:2026.1.16
-  end:*
-  text:中道改革連合
-
-node:
   id:2449
-  column:11
+  column:12
   type:box
   date:2023.12.14
   end:2024.10.10
@@ -997,6 +985,7 @@ node:
   date:2010.4.19
   end:*
   text:大阪維新の会
+  borderdasharray:2
 
 node:
   id:2452
@@ -1080,7 +1069,7 @@ node:
 
 node:
   id:2462
-  column:21
+  column:22
   type:box
   date:2023.10.17
   end:*
@@ -1088,7 +1077,7 @@ node:
 
 node:
   id:2463
-  column:12
+  column:21
   type:box
   date:2026.1.25
   end:*
@@ -1096,11 +1085,20 @@ node:
 
 node:
   id:2463
-  column:16
+  column:17
   type:box
   date:2025.5.8
   end:*
   text:チームみらい
+
+node:
+  id:2464
+  column:23
+  type:box
+  date:2013.7.21
+  end:*
+  text:新党大地
+  borderdasharray:2
 
 transition:
   from:1501
@@ -1115,12 +1113,12 @@ transition:
 transition:
   from:1501
   to:1506
-  fromoffset:0,-10
+  fromoffset:0,-20
 
 transition:
   from:2003
   to:2004
-  fromoffset:0,-10
+  fromoffset:0,-20
 
 transition:
   from:2003
@@ -1130,5 +1128,221 @@ transition:
 transition:
   from:2401
   to:2004,2402
-  fromoffset:0,-4
+  tooffset:0,10
   date:1994.5.22
+
+transition:
+  from:2003
+  to:2101,2102,2103,2104
+  fromoffset:0,-20
+
+
+transition:
+  from:2200,2100,2101,2102,2103,2104
+  to:2405
+
+transition:
+  from:2300
+  to:2301
+  fromoffset:0,-10
+
+transition:
+  from:2301
+  to:2405
+  date:1994.12.10
+  tooffset:0,0
+
+transition:
+  from:2405
+  to:2406,2407,2408,2409,2410,2411,2412,2413
+  fromoffset:0,-20
+
+transition:
+  from:2406,2407,2408
+  to:2418
+  fromoffset:0,-1
+
+transition:
+  from:1506,2004
+  to:2416
+  fromoffset:0,-5
+
+transition:
+  from:2413
+  to:2303
+  tooffset:0,10
+  date:1998.1.18
+
+transition:
+  from:2412
+  to:2303
+  fromoffset:0,-5
+
+transition:
+  from:2416,2404,2418,2409
+  to:2417
+  fromoffset:0,-5
+
+transition:
+  from:2410
+  to:2417
+  tooffset:0,5
+  date:2003.9.26
+
+transition:
+  from:2410
+  to:2414
+  fromoffset:0,-5
+
+transition:
+  from:2414,2417
+  to:2415
+  fromoffset:0,-15
+
+transition:
+  from:2415
+  to:2003
+  tooffset:0,15
+  date:2003.11.21
+
+transition:
+  from:2003,2417
+  to:2419
+  fromoffset:0,-50
+
+transition:
+  from:2003
+  to:2420
+  fromoffset:0,-50
+
+transition:
+  from:2417
+  to:2431
+  fromoffset:0,-10
+
+transition:
+  from:2417
+  to:2423
+  fromoffset:0,-10
+
+transition:
+  from:2417
+  to:2433
+  fromoffset:0,-10
+
+transition:
+  from:2433
+  to:2434
+  tooffset:0,0
+  date:2012.11.15
+
+transition:
+  from:2417
+  to:2434
+  fromoffset:0,-10
+
+transition:
+  from:2417
+  to:2439
+  fromoffset:0,-10
+
+transition:
+  from:2430
+  to:2443
+  fromoffset:0,-10
+
+transition:
+  from:2440
+  to:2442,2441
+  fromoffset:0,-8
+
+transition:
+  from:2442
+  to:2444
+
+transition:
+  from:2443,2444
+  to:2446
+  fromoffset:0,-8
+
+transition:
+  from:2444
+  to:2445
+  fromoffset:0,-1
+
+transition:
+  from:2424
+  to:2425
+  fromoffset:0,-10
+
+transition:
+  from:2425
+  to:2453
+  tooffset:0,10
+  date:2014.9.21
+
+transition:
+  from:2003
+  to:2421
+  fromoffset:0,-10
+
+transition:
+  from:2422
+  to:2452
+  fromoffset:0,10
+  tooffset:0,40
+  date:2012.11.17
+
+transition:
+  from:2427
+  to:2457
+  tooffset:0,20
+  date:2014.11.26
+
+transition:
+  from:2428
+  to:2457
+  tooffset:0,20
+  date:2015.5.1
+
+transition:
+  from:2452
+  to:2457
+  fromoffset:0,-10
+
+transition:
+  from:2453
+  to:2454
+  fromoffset:0,-10
+
+transition:
+  from:2453
+  to:2456
+  fromoffset:0,-10
+
+transition:
+  from:2453,2456
+  to:2430
+  fromoffset:0,-1
+
+transition:
+  from:2458
+  to:2003
+  fromoffset:0,-1
+  date:2018.11.1
+
+transition:
+  from:2451,2450
+  to:2452
+  fromoffset:0,-1
+
+transition:
+  from:2445
+  to:2449
+  fromoffset:0,-10
+
+transition:
+  from:2449
+  to:2455
+  tooffset:0,10
+  date:2024.10.10
