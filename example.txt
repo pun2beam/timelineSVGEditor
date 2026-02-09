@@ -2740,7 +2740,7 @@ band:
   text:42
   color:#ffffff
   bgcolor:#000000
-  width:18.16
+  width:7
 
 band:
   id:1092
