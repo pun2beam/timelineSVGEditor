@@ -1290,7 +1290,7 @@ node:
 
 node:
   id:2424
-  column:14
+  column:15
   type:box
   date:2009.8.8
   end:2014.11.28
@@ -1306,7 +1306,7 @@ node:
 
 node:
   id:2426
-  column:14
+  column:15
   type:box
   date:2015.1.8
   end:2018.12.10
@@ -1414,7 +1414,7 @@ node:
 
 node:
   id:2440
-  column:16
+  column:14
   type:box
   date:2017.9.25
   end:2018.5.7
@@ -1422,7 +1422,7 @@ node:
 
 node:
   id:2441
-  column:16
+  column:14
   type:box
   date:2018.5.7
   end:2021.10.1
@@ -1430,7 +1430,7 @@ node:
 
 node:
   id:2442
-  column:15
+  column:13
   type:box
   date:2018.5.7
   end:2018.5.7
@@ -2374,7 +2374,7 @@ band:
 
 band:
   id:1052
-  column:14
+  column:15
   date:2009.8.30-2012.12.16
   text:5
   color:#ffffff
@@ -2437,7 +2437,7 @@ band:
 
 band:
   id:1059
-  column:14
+  column:15
   date:2012.12.16-2014.12.14
   text:18
   color:#ffffff
@@ -2545,7 +2545,7 @@ band:
 
 band:
   id:1071
-  column:16
+  column:14
   date:2017.10.22-2018.5.7
   text:50
   color:#ffffff
