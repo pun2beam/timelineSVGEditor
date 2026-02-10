@@ -298,6 +298,7 @@ function normalizeModel(raw, parseErrors) {
     nodeBoxHeightPx: null,
     nodeBoxLast: false,
     nodeIdVisible: false,
+    translationBoxAdjust: false,
   };
   const model = {
     columns: [],
@@ -345,6 +346,22 @@ function normalizeModel(raw, parseErrors) {
         errors.push({
           line: block.line,
           message: `node.id.visibleの値が不正です: ${value}`,
+        });
+        return;
+      }
+      if (key === "translation.box.adjust") {
+        const normalized = value.trim().toLowerCase();
+        if (normalized === "on") {
+          defaults.translationBoxAdjust = true;
+          return;
+        }
+        if (normalized === "off") {
+          defaults.translationBoxAdjust = false;
+          return;
+        }
+        errors.push({
+          line: block.line,
+          message: `translation.box.adjustの値が不正です: ${value}`,
         });
         return;
       }
@@ -579,6 +596,7 @@ function layout(model) {
   const defaultNodeBoxHeight = model.meta.defaults?.nodeBoxHeightPx ?? null;
   const isNodeBoxLastOn = model.meta.defaults?.nodeBoxLast ?? false;
   const isNodeIdVisible = model.meta.defaults?.nodeIdVisible ?? false;
+  const isTranslationBoxAdjustOn = model.meta.defaults?.translationBoxAdjust ?? false;
   const scaleColumn = model.columns.find(
     (column) => column.type === "year" && column.period,
   );
@@ -706,10 +724,21 @@ function layout(model) {
       const fromOffsetY = transition.fromOffset?.y ?? 0;
       const toOffsetX = transition.toOffset?.x ?? 0;
       const toOffsetY = transition.toOffset?.y ?? 0;
+      const fromX = fromNode.x + fromNode.width / 2 + fromOffsetX;
+      let toAnchorX = toNode.x + toNode.width / 2;
+      if (isTranslationBoxAdjustOn && toNode.type === "box") {
+        const toLeft = toNode.x;
+        const toRight = toNode.x + toNode.width;
+        if (fromX > toRight) {
+          toAnchorX = toRight;
+        } else if (fromX < toLeft) {
+          toAnchorX = toLeft;
+        }
+      }
       return {
-        fromX: fromNode.x + fromNode.width / 2 + fromOffsetX,
+        fromX,
         fromY: baseY + fromOffsetY,
-        toX: toNode.x + toNode.width / 2 + toOffsetX,
+        toX: toAnchorX + toOffsetX,
         toY: baseY + toOffsetY,
       };
     })
