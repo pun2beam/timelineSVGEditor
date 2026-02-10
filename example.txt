@@ -2,6 +2,7 @@ defaults:
   node.box.height:40px
   node.box.last:on
   node.id.visible:off
+  translation.box.adjust:on
 
 column:
   id:1
@@ -1650,7 +1651,7 @@ transition:
 transition:
   from:2401
   to:2004,2402
-  tooffset:0,10
+  tooffset:0,0
   date:1994.5.22
 
 transition:
@@ -1677,7 +1678,7 @@ transition:
 transition:
   from:2405
   to:2406,2407,2408,2409,2410,2411,2412,2413
-  fromoffset:0,-20
+  fromoffset:0,-10
 
 transition:
   from:2406,2407,2408
@@ -1687,7 +1688,7 @@ transition:
 transition:
   from:1506,2004
   to:2416
-  fromoffset:0,-5
+  fromoffset:0,0
 
 transition:
   from:2413
@@ -1703,23 +1704,23 @@ transition:
 transition:
   from:2416,2404,2418,2409
   to:2417
-  fromoffset:0,-5
+  fromoffset:0,-2
 
 transition:
   from:2410
   to:2417
-  tooffset:0,5
+  tooffset:0,0
   date:2003.9.26
 
 transition:
   from:2410
   to:2414
-  fromoffset:0,-5
+  fromoffset:0,0
 
 transition:
   from:2414,2417
   to:2415
-  fromoffset:0,-15
+  fromoffset:0,-1
 
 transition:
   from:2415
@@ -1771,7 +1772,7 @@ transition:
 transition:
   from:2430
   to:2443
-  fromoffset:0,-10
+  fromoffset:0,-1
 
 transition:
   from:2440
@@ -1795,12 +1796,12 @@ transition:
 transition:
   from:2424
   to:2425
-  fromoffset:0,-10
+  fromoffset:0,-1
 
 transition:
   from:2425
   to:2453
-  tooffset:0,10
+  tooffset:0,0
   date:2014.9.21
 
 transition:
@@ -1811,20 +1812,20 @@ transition:
 transition:
   from:2422
   to:2452
-  fromoffset:0,10
-  tooffset:0,40
+  fromoffset:0,0
+  tooffset:0,0
   date:2012.11.17
 
 transition:
   from:2427
   to:2457
-  tooffset:0,20
+  tooffset:0,1
   date:2014.11.26
 
 transition:
   from:2428
   to:2457
-  tooffset:0,20
+  tooffset:0,1
   date:2015.5.1
 
 transition:
@@ -1835,12 +1836,12 @@ transition:
 transition:
   from:2453
   to:2454
-  fromoffset:0,-10
+  fromoffset:0,-1
 
 transition:
   from:2453
   to:2456
-  fromoffset:0,-10
+  fromoffset:0,-1
 
 transition:
   from:2453,2456
@@ -1861,12 +1862,12 @@ transition:
 transition:
   from:2445
   to:2449
-  fromoffset:0,-10
+  fromoffset:0,-1
 
 transition:
   from:2449
   to:2455
-  tooffset:0,10
+  tooffset:0,0
   date:2024.10.10
 
 transition:
@@ -1888,12 +1889,12 @@ transition:
 transition:
   from:2430
   to:2440
-  fromoffset:0,-10
+  fromoffset:0,-1
 
 transition:
   from:2303
   to:2447
-  fromoffset:0,-10
+  fromoffset:0,-2
 
 band:
   id:1000
