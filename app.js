@@ -725,21 +725,25 @@ function layout(model) {
       const toOffsetX = transition.toOffset?.x ?? 0;
       const toOffsetY = transition.toOffset?.y ?? 0;
       const fromX = fromNode.x + fromNode.width / 2 + fromOffsetX;
+      const toY = baseY + toOffsetY;
       let toAnchorX = toNode.x + toNode.width / 2;
       if (isTranslationBoxAdjustOn && toNode.type === "box") {
+        const isWithinToNodeVerticalRange = toY >= toNode.y && toY <= toNode.y + toNode.height;
         const toLeft = toNode.x;
         const toRight = toNode.x + toNode.width;
-        if (fromX > toRight) {
-          toAnchorX = toRight;
-        } else if (fromX < toLeft) {
-          toAnchorX = toLeft;
+        if (isWithinToNodeVerticalRange) {
+          if (fromX > toRight) {
+            toAnchorX = toRight;
+          } else if (fromX < toLeft) {
+            toAnchorX = toLeft;
+          }
         }
       }
       return {
         fromX,
         fromY: baseY + fromOffsetY,
         toX: toAnchorX + toOffsetX,
-        toY: baseY + toOffsetY,
+        toY,
       };
     })
     .filter(Boolean);
