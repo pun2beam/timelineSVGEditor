@@ -99,10 +99,12 @@ connector:
 defaults:
   node.box.height:22px
   node.box.last:on
+  translation.box.adjust:on
 ```
 
 - `node.box.height` でボックスの高さを既定値として指定
 - `node.box.last` を `on` にすると、年表示列の末尾まで継続する `type:box` ノードを末尾位置にも描画
+- `translation.box.adjust` を `on` にすると、transition の接続先が `type:box` の場合に from の位置関係に応じて接続点を左辺/中央/右辺へ自動調整
 
 ## レイアウトの考え方
 
