@@ -26,7 +26,7 @@ const paneResizer = document.getElementById("pane-resizer");
 
 let currentSvg = "";
 let currentViewBox = null;
-let leftPaneRatio = 0.4;
+let leftPaneRatio = 0.2;
 
 function debounce(fn, delay) {
   let timer;
