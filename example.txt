@@ -335,7 +335,14 @@ node:
   column:3
   type:text
   date:2025.10.21
-  text:・高市内閣
+  text:・第1次高市内閣
+
+node:
+  id:29
+  column:3
+  type:text
+  date:2026.2.18
+  text:・第2次高市内閣
 
 band:
   id:1
