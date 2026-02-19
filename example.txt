@@ -1,7 +1,7 @@
 defaults:
   node.box.height:40px
   node.box.last:on
-  node.id.visible:on
+  node.id.visible:off
   translation.box.adjust:on
 
 column:
