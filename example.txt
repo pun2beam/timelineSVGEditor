@@ -1,7 +1,7 @@
 defaults:
   node.box.height:40px
   node.box.last:on
-  node.id.visible:off
+  node.id.visible:on
   translation.box.adjust:on
 
 column:
@@ -1449,7 +1449,7 @@ node:
   column:10
   type:box
   date:2017.10.3
-  end:2020.9.14
+  end:2020.9.15
   text:立憲民主党
 
 node:
@@ -1473,12 +1473,12 @@ node:
   column:10
   type:box
   date:2020.9.15
-  end:2026.1.16
+  end:*
   text:立憲民主党
 
 node:
   id:2447
-  column:10
+  column:11
   type:box
   date:2026.1.16
   end:*
@@ -1902,6 +1902,11 @@ transition:
   from:2303
   to:2447
   fromoffset:0,-2
+
+transition:
+  from:2446
+  to:2447
+  fromoffset:0,0
 
 band:
   id:1000
@@ -2771,7 +2776,7 @@ band:
 
 band:
   id:1101
-  column:10
+  column:11
   date:2026.2.8-2026.12.31
   text:46
   color:#ffffff
